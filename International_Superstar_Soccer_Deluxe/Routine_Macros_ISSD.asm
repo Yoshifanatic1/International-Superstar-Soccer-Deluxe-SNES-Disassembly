@@ -34523,7 +34523,7 @@ DATA_82F576:
 	dw $7E5916,$7E5966,$7E59AA,$7E59EE,$7E5A32,$7E5A8E,$7E5AEA,$7E5B46
 	dw $7E5B9A,$7E5BEE
 
-DATA_82F59A:														; Note: Pointers to the OAM data for the big team names.
+DATA_82F59A:														; Note: Pointers to the OAM data for the big team and stadium names.
 	dw $7E5020,$7E5034,$7E5044,$7E4F02,$7E4F32,$7E4F46,$7E4F56,$7E4F82
 	dw $7E4FFC,$7E4F6A,$7E4FA2,$7E4FD0,$7E4F92,$7E4FE8,$7E4FB8,$7E500C
 	dw $7E4F1A,$7E51CE,$7E506A,$7E5094,$7E50A8,$7E50BC,$7E5134,$7E5182
@@ -34714,7 +34714,7 @@ DATA_82FADD:
 DATA_82FAED:
 	db $72,$4A,$76,$52,$7E,$5A,$82,$52,$7A,$52,$7A,$4A,$72,$5A,$8A,$5A
 
-DATA_82FAFD:
+DATA_82FAFD:														; Note: Indexes into DATA_82F59A for the stadium names.
 	db $30,$44,$08,$00,$04,$10,$3C,$36
 
 DATA_82FB05:
@@ -99492,449 +99492,824 @@ DATA_878138:
 	dw DATA_87958E,DATA_87962E,DATA_8796CE,DATA_87976E,DATA_87980E,DATA_87980E,DATA_87980E,DATA_87980E
 	dw DATA_87980E,DATA_87980E,DATA_87980E
 
+cleartable
+table "tables/fonts/TallMenuText.txt"
+
 DATA_87818E:
-	dw $8277,$8288,$8A8F,$0000,$9377,$8E86,$8D90,$008A
-	dw $7700,$8382,$008A,$0000,$8F68,$9095,$8A8F,$8A8F
-	dw $936E,$9B82,$828A,$908F,$8100,$9182,$8291,$0000
-	dw $866B,$8A7A,$908F,$868F,$8277,$9494,$9382,$0090
-	dw $826E,$878D,$8F82,$0090,$826A,$8393,$8F90,$008A
-	dw $906A,$8A8D,$9596,$0090,$8274,$848F,$8F8A,$008A
-	dw $9669,$8284,$8A93,$0090,$8277,$9383,$9B8A,$908A
-	dw $8A79,$8888,$908A,$0000,$8100,$8F82,$8288,$0000
-	dw $8A69,$9595,$8F82,$008A,$8F68,$8A95,$9084,$8A8D
-	dw $906A,$9593,$9486,$0086,$8A6D,$9385,$8F8A,$008A
+	db "Pagani  "
+	db "Premoli "
+	db " Pabi   "
+	db "Antonini"
+	db "Graziano"
+	db " Zappa  "
+	db "DeSinone"
+	db "Passaro "
+	db "Galfano "
+	db "Carboni "
+	db "Coliuto "
+	db "Mancini "
+	db "Bucario "
+	db "Pabrizio"
+	db "Riggio  "
+	db " Zanga  "
+	db "Bittani "
+	db "Anticoli"
+	db "Cortese "
+	db "Fidrini "
 
 DATA_87822E:
-	dw $6E00,$9093,$8F86,$0000,$866B,$7100,$8F90,$0088
-	dw $7200,$8582,$8B8A,$008C,$847A,$9689,$8893,$9386
-	dw $866F,$8B8A,$868F,$008F,$866B,$6E00,$9093,$8590
-	dw $827D,$008F,$8A7E,$8C8B,$8A7D,$9494,$8984,$9386
-	dw $866B,$7900,$8B8A,$008C,$9072,$9191,$9386,$0094
-	dw $8669,$8893,$8694,$008F,$8671,$8893,$8F86,$0000
-	dw $866B,$7D00,$8686,$0093,$9675,$869A,$948F,$0000
-	dw $827E,$9582,$8B8A,$008C,$8297,$008F,$866E,$958F
-	dw $8677,$8695,$9493,$0086,$6900,$8C82,$868C,$0093
-	dw $7A00,$8298,$9382,$0095,$546B,$936E,$8690,$008F
+	db " Groen  "
+	db "De Jong "
+	db " Kadijk "
+	db "Schurger"
+	db "Heijnen "
+	db "De Grood"
+	db "Van Wijk"
+	db "Visscher"
+	db "De Rijk "
+	db "Koppers "
+	db "Bergsen "
+	db "Jergen  "
+	db "De Veer "
+	db "Nuyens  "
+	db "Waatijk "
+	db "van Gent"
+	db "Peterse "
+	db " Bakker "
+	db " Swaart "
+	db "D.Groen "
 
 DATA_8782CE:
-	dw $5479,$8269,$8C8F,$0094,$547A,$827E,$8C8D,$9386
-	dw $5470,$8568,$8E82,$0094,$5469,$937E,$888A,$9589
-	dw $5471,$9074,$9390,$0086,$896A,$9382,$958D,$8F90
-	dw $5472,$906F,$8585,$868D,$5471,$8D77,$9582,$0095
-	dw $546D,$9074,$8D93,$9A86,$547B,$8672,$8886,$8F82
-	dw $5468,$8679,$8A88,$0094,$546E,$9369,$9890,$008F
-	dw $826E,$8494,$8A90,$8F88,$966B,$8C84,$8289,$008E
-	dw $826A,$8D93,$8F8A,$0088,$8A73,$9191,$958A,$0095
-	dw $7A00,$9095,$868F,$0000,$7A00,$908D,$8F82,$0000
-	dw $7500,$8390,$868D,$0000,$936E,$8982,$8E82,$0000
+	db "R.Banks "
+	db "S.Walker"
+	db "I.Adams "
+	db "B.Wright"
+	db "J.Moore "
+	db "Charlton"
+	db "K.Hoddle"
+	db "J.Platt "
+	db "F.Morley"
+	db "T.Keegan"
+	db "A.Regis "
+	db "G.Brown "
+	db "Gascoign"
+	db "Duckham "
+	db "Carling "
+	db "Lippitt "
+	db " Stone  "
+	db " Sloan  "
+	db " Noble  "
+	db "Graham  "
 
 DATA_87836E:
-	dw $906D,$9494,$8F86,$0000,$8B69,$9386,$868C,$0000
-	dw $906D,$9493,$8D86,$008D,$8B72,$9386,$8D96,$0087
-	dw $9075,$8593,$8683,$8893,$897B,$9390,$8694,$008F
-	dw $8A7D,$8688,$828D,$858F,$867D,$8294,$9482,$0000
-	dw $9772,$8D82,$9582,$8582,$8B69,$9390,$948F,$8F86
-	dw $6D00,$8A8D,$8C8F,$0000,$8F6C,$8289,$8E8E,$9382
-	dw $8D76,$8694,$008F,$0000,$936C,$8C8A,$9494,$8F86
-	dw $827D,$898D,$8D82,$0000,$866F,$938A,$8F96,$0088
-	dw $8A75,$948D,$8F86,$0000,$826F,$868D,$9594,$8D90
-	dw $906F,$8F86,$0000,$0000,$8A7A,$868E,$948F,$8F86
+	db "Fossen  "
+	db "Bjerke  "
+	db "Forsell "
+	db "Kjerulf "
+	db "Nordberg"
+	db "Thorsen "
+	db "Vigeland"
+	db "Vesaas  "
+	db "Kvalatad"
+	db "Bjornsen"
+	db " Flink  "
+	db "Enhammar"
+	db "Olsen   "
+	db "Erikssen"
+	db "Valhal  "
+	db "Heirung "
+	db "Nilsen  "
+	db "Halestol"
+	db "Hoen    "
+	db "Simensen"
 
 DATA_87840E:
-	dw $6A00,$9382,$908D,$0094,$7900,$8E90,$9386,$0090
-	dw $8274,$9593,$8F8A,$9B86,$8D68,$9387,$8586,$0090
-	dw $7700,$9386,$9B86,$0000,$826A,$828E,$8984,$0090
-	dw $7600,$9593,$8886,$0082,$867A,$9393,$8F82,$0090
-	dw $6D00,$9496,$8695,$0000,$826E,$9393,$858A,$0090
-	dw $906A,$8A93,$9386,$9093,$8D6A,$8E86,$8F86,$8695
-	dw $8271,$8A84,$958F,$0090,$7400,$8D8A,$8F82,$0000
-	dw $8674,$858F,$9B90,$0082,$6D00,$9693,$9095,$0094
-	dw $9468,$8F86,$8A94,$0090,$6800,$8293,$858F,$0082
-	dw $7D00,$858A,$8D82,$0000,$0000,$827A,$9B8F,$0000
+	db " Carlos "
+	db " Romero "
+	db "Martinez"
+	db "Alfredo "
+	db " Perez  "
+	db "Camacho "
+	db " Ortega "
+	db "Serrano "
+	db " Fuste  "
+	db "Garrido "
+	db "Corierro"
+	db "Clemente"
+	db "Jacinto "
+	db " Milan  "
+	db "Mendoza "
+	db " Frutos "
+	db "Asensio "
+	db " Aranda "
+	db " Vidal  "
+	db "  Sanz  "
 
 DATA_8784AE:
-	dw $7400,$8D82,$8F8A,$0000,$826E,$978D,$8F8A,$0000
-	dw $0000,$9A79,$8F82,$0000,$9674,$9193,$9A89,$0000
-	dw $8D6A,$8F82,$9A84,$0000,$7400,$8882,$8686,$0000
-	dw $8269,$8D8A,$9A86,$0000,$6A00,$8290,$9A85,$0000
-	dw $6900,$8F90,$9382,$0000,$7200,$868A,$9A8D,$0000
-	dw $936A,$8F90,$8F8A,$0000,$7A00,$9A8E,$8995,$0000
-	dw $6B00,$8F96,$868F,$0000,$6900,$939A,$868F,$0000
-	dw $9074,$9393,$948A,$8F90,$6800,$8285,$948E,$0000
-	dw $957A,$9886,$9382,$0095,$7400,$6C84,$9097,$009A
-	dw $5A76,$8274,$8D8D,$9A86,$906B,$8F8F,$8D86,$9A8D
+	db " Malin  "
+	db "Galvin  "
+	db "  Ryan  "
+	db "Murphy  "
+	db "Clancy  "
+	db " Magee  "
+	db "Bailey  "
+	db " Coady  "
+	db " Bonar  "
+	db " Kiely  "
+	db "Cronin  "
+	db " Smyth  "
+	db " Dunne  "
+	db " Byrne  "
+	db "Morrison"
+	db " Adams  "
+	db "Stewart "
+	db " McEvoy "
+	db "O'Malley"
+	db "Donnelly"
 
 DATA_87854E:
-	dw $8A79,$8683,$938A,$0090,$7A00,$8D8A,$8297,$0000
-	dw $8674,$868F,$8694,$0094,$8D76,$978A,$8A86,$8293
-	dw $866D,$9393,$8A86,$8293,$6D00,$8D86,$998A,$0000
-	dw $7A00,$8F82,$9095,$0094,$6B00,$8296,$9593,$0086
-	dw $906A,$9393,$8A86,$0082,$7400,$9582,$9490,$0090
-	dw $0000,$8277,$009B,$0000,$8274,$9293,$8696,$0094
-	dw $7300,$9190,$9486,$0000,$7700,$8D96,$858A,$0090
-	dw $6A00,$9382,$908D,$0094,$8269,$8393,$9490,$0082
-	dw $8274,$8A93,$898F,$0090,$8274,$8984,$8582,$0090
-	dw $7500,$9786,$9486,$0000,$906E,$8A85,$898F,$0090
+	db "Ribeiro "
+	db " Silva  "
+	db "Meneses "
+	db "Oliveira"
+	db "Ferreira"
+	db " Felix  "
+	db " Santos "
+	db " Duarte "
+	db "Correia "
+	db " Matoso "
+	db "  Paz   "
+	db "Marques "
+	db " Lopes  "
+	db " Pulido "
+	db " Carlos "
+	db "Barbosa "
+	db "Marinho "
+	db "Machado "
+	db " Neves  "
+	db "Godinho "
 
 DATA_8785EE:
-	dw $5477,$8D76,$8694,$008F,$547A,$8671,$948F,$8F86
-	dw $9077,$8D96,$8694,$008F,$546F,$9074,$8D8D,$9386
-	dw $8A75,$8D86,$8694,$008F,$896A,$8A93,$9594,$8F86
-	dw $546D,$9074,$838D,$009A,$847A,$8E89,$8A86,$8984
-	dw $8279,$8E94,$9496,$8694,$8273,$8596,$9693,$0091
-	dw $8D6C,$9594,$9693,$0091,$8A7A,$8697,$8283,$8C86
-	dw $5468,$8A77,$888F,$8D86,$8A7D,$878D,$9390,$0095
-	dw $8677,$8695,$9493,$8F86,$826F,$948F,$8F86,$0000
-	dw $7500,$9390,$9A83,$0000,$7100,$949A,$868C,$0000
-	dw $7300,$9382,$8694,$008F,$7600,$868D,$8694,$008F
+	db "P.Olsen "
+	db "S.Jensen"
+	db "Poulsen "
+	db "H.Moller"
+	db "Nielsen "
+	db "Christen"
+	db "F.Molby "
+	db "Schmeich"
+	db "Rasmusse"
+	db "Laudrup "
+	db "Elstrup "
+	db "Sivebaek"
+	db "A.Pingel"
+	db "Vilfort "
+	db "Petersen"
+	db "Hansen  "
+	db " Norby  "
+	db " Jyske  "
+	db " Larsen "
+	db " Olesen "
 
 DATA_87868E:
-	dw $7E00,$8882,$868F,$0093,$7400,$8D96,$868D,$0093
-	dw $7200,$8D90,$868D,$0000,$7A00,$8886,$8D86,$0000
-	dw $8D72,$8A86,$828E,$8F8F,$8D72,$8982,$8D90,$0085
-	dw $966E,$8F86,$8995,$9386,$0000,$9069,$8C84,$0000
-	dw $7A00,$9395,$8F82,$009B,$9672,$8F89,$9386,$0095
-	dw $7A00,$868A,$868C,$0000,$8273,$8984,$828E,$8F8F
-	dw $847A,$8A89,$858F,$008D,$0000,$8368,$8D86,$0000
-	dw $7900,$8D8A,$868C,$0000,$847A,$8E89,$868A,$8D85
-	dw $6B00,$8693,$8689,$0093,$6900,$8486,$868C,$0093
-	dw $8A6E,$8983,$9382,$9585,$936D,$8990,$8A8D,$8984
+	db " Wagner "
+	db " Muller "
+	db " Kolle  "
+	db " Segel  "
+	db "Kleimann"
+	db "Klahold "
+	db "Guenther"
+	db "  Bock  "
+	db " Stranz "
+	db "Kuhnert "
+	db " Sieke  "
+	db "Lachmann"
+	db "Schindl "
+	db "  Abel  "
+	db " Rilke  "
+	db "Schmiedl"
+	db " Dreher "
+	db " Becker "
+	db "Gibhardt"
+	db "Frohlich"
 
 DATA_87872E:
-	dw $546A,$8A6B,$8A85,$9386,$547A,$8273,$8D83,$8F82
-	dw $546B,$8285,$8A97,$8685,$5474,$8673,$9084,$958E
-	dw $5471,$8673,$9079,$9996,$5474,$966B,$9091,$958F
-	dw $897B,$868A,$9393,$009A,$5473,$966D,$868F,$0094
-	dw $546D,$9079,$869A,$8693,$896A,$9582,$8D8A,$908D
-	dw $546B,$966B,$9083,$948A,$826A,$978D,$868A,$0093
-	dw $5479,$9368,$828F,$8596,$7400,$9390,$8284,$0096
-	dw $826A,$8D8A,$868D,$9996,$7A00,$8386,$8F82,$0000
-	dw $7400,$9382,$8A82,$0094,$8273,$8787,$958A,$0086
-	dw $7700,$9482,$8284,$008D,$8673,$8697,$9294,$8696
+	db "C.Didier"
+	db "S.Lablan"
+	db "D.davide"
+	db "M.Lecomt"
+	db "J.LeRoux"
+	db "M.Dupont"
+	db "Thierry "
+	db "L.Funes "
+	db "F.Royere"
+	db "Chatillo"
+	db "D.Dubois"
+	db "Calvier "
+	db "R.Arnaud"
+	db " Morcau "
+	db "Cailleux"
+	db " Seban  "
+	db " Marais "
+	db "Laffite "
+	db " Pascal "
+	db "Levesque"
 
 DATA_8787CE:
-	dw $827D,$008F,$8A79,$9586,$7900,$8490,$8689,$0000
-	dw $7700,$9486,$8F82,$0095,$9069,$8F8F,$8286,$0096
-	dw $7300,$9690,$948A,$0000,$8D77,$9586,$9386,$0094
-	dw $7900,$8F90,$8685,$0000,$8A6E,$8E8D,$8F90,$0095
-	dw $7200,$9490,$8695,$0093,$9069,$9396,$8A94,$008F
-	dw $6B00,$6C5A,$8E8E,$0086,$827D,$008F,$866F,$9593
-	dw $6900,$7790,$9382,$0095,$826B,$9397,$868A,$0094
-	dw $6800,$838D,$9386,$0095,$896B,$9090,$8988,$0086
-	dw $8279,$868E,$908D,$0095,$866B,$9397,$8F8A,$9585
-	dw $897B,$949A,$8694,$008F,$6F00,$8482,$8689,$009B
+	db "Van Riet"
+	db " Roche  "
+	db " Pesant "
+	db "Bonneau "
+	db " Louis  "
+	db "Pleters "
+	db " Ronde  "
+	db "Gilmont "
+	db " Koster "
+	db "Boursin "
+	db " D'Emme "
+	db "Van Hert"
+	db " BoPart "
+	db "Davries "
+	db " Albert "
+	db "Dhooghe "
+	db "Ramelot "
+	db "Devrindt"
+	db "Thyssen "
+	db " Hachez "
 
 DATA_87886E:
-	dw $977A,$8F86,$9494,$8F90,$0000,$8274,$8E8D,$0000
-	dw $9673,$858F,$9388,$8F86,$9470,$8C82,$9494,$8F90
-	dw $896C,$9493,$9094,$008F,$6C00,$838F,$8482,$008C
-	dw $8A75,$948D,$9094,$008F,$9673,$858F,$9494,$8F90
-	dw $826F,$948F,$9094,$008F,$957A,$8F86,$828E,$8C93
-	dw $7400,$8882,$968F,$0094,$6C00,$8D93,$8F8A,$0088
-	dw $8271,$948F,$9094,$008F,$7B00,$9089,$8F93,$0000
-	dw $0000,$9069,$8893,$0000,$8669,$8893,$9594,$8F86
-	dw $6800,$8399,$9390,$008F,$0000,$936E,$8F86,$0000
-	dw $8C7A,$8890,$968D,$858F,$8677,$9493,$9094,$008F
+	db "Svensson"
+	db "  Malm  "
+	db "Lundgren"
+	db "Isaksson"
+	db "Ehrsson "
+	db " Enback "
+	db "Nilsson "
+	db "Lundsson"
+	db "Hansson "
+	db "Stenmark"
+	db " Magnus "
+	db " Erling "
+	db "Jansson "
+	db " Thorn  "
+	db "  Borg  "
+	db "Bergsten"
+	db " Axborn "
+	db "  Gren  "
+	db "Skoglund"
+	db "Persson "
 
 DATA_87890E:
-	dw $9077,$8691,$8494,$0096,$8D70,$868A,$8494,$0096
-	dw $906F,$908D,$8298,$9A95,$0000,$9679,$0094,$0000
-	dw $6A00,$9782,$8D90,$0000,$0000,$826E,$868F,$0000
-	dw $6D00,$8B86,$9386,$0000,$8A74,$868D,$8494,$0096
-	dw $8272,$958F,$8E82,$938A,$6A00,$9490,$8295,$008F
-	dw $9369,$9486,$969B,$008D,$8269,$848D,$9486,$9684
-	dw $7100,$9490,$878A,$0000,$6B00,$8293,$9684,$008D
-	dw $9079,$8685,$8F82,$0096,$966B,$8A8E,$9395,$0096
-	dw $8F68,$9385,$9486,$9684,$6B00,$8390,$8A93,$008F
-	dw $7500,$8286,$9688,$0000,$7400,$8490,$8F82,$0096
+	db "Popescu "
+	db "Iliescu "
+	db "Holowaty"
+	db "  Rus   "
+	db " Cavol  "
+	db "  Gane  "
+	db " Fejer  "
+	db "Milescu "
+	db "Kantamir"
+	db " Costan "
+	db "Breszul "
+	db "Balcescu"
+	db " Josif  "
+	db " Dracul "
+	db "Rodeanu "
+	db "Dumitru "
+	db "Andrescu"
+	db " Dobrin "
+	db " Neagu  "
+	db " Mocanu "
 
 DATA_8789AE:
-	dw $7700,$9190,$9790,$0000,$8A7A,$868E,$8F90,$9790
-	dw $8A6B,$8A8E,$9395,$9790,$7100,$8896,$9790,$0000
-	dw $6900,$9590,$9786,$0000,$9671,$8693,$8C8F,$9790
-	dw $8D7A,$9782,$908C,$0097,$7200,$9490,$9095,$0097
-	dw $7700,$8F86,$9786,$0000,$6900,$8D96,$9088,$0097
-	dw $8A74,$828D,$908C,$0097,$827A,$8293,$908F,$0097
-	dw $7000,$8297,$908F,$0097,$6900,$9390,$8694,$0097
-	dw $9372,$8496,$8689,$0097,$7700,$9586,$908C,$0097
-	dw $7700,$8F82,$869B,$0097,$6B00,$868A,$978F,$0000
-	dw $8271,$8A8C,$908E,$0097,$8671,$8495,$8689,$0097
+	db " Popov  "
+	db "Simeonov"
+	db "Dimitrov"
+	db " Jugov  "
+	db " Botev  "
+	db "Jurenkov"
+	db "Slavkov "
+	db " Kostov "
+	db " Penev  "
+	db " Bulgov "
+	db "Milakov "
+	db "Saranov "
+	db " Ivanov "
+	db " Borsev "
+	db "Kruchev "
+	db " Petkov "
+	db " Panzev "
+	db " Dienv  "
+	db "Jakimov "
+	db "Jetchev "
 
 DATA_878A4E:
-	dw $8E7A,$938A,$908F,$0097,$9069,$9093,$8A85,$008F
-	dw $7700,$9586,$9093,$0097,$897A,$8D82,$8E8A,$9790
-	dw $8000,$9482,$8A89,$008F,$7200,$9A93,$908D,$0097
-	dw $8271,$9A94,$908C,$0097,$9672,$8994,$908C,$0097
-	dw $937C,$8283,$908F,$0097,$6E00,$9086,$8893,$009A
-	dw $8E6B,$958A,$8A93,$9790,$8272,$8293,$9094,$0097
-	dw $8F68,$9385,$9190,$9790,$8D68,$8C86,$9094,$0097
-	dw $827D,$8A94,$908D,$0097,$8A6B,$9495,$8984,$908C
-	dw $8269,$8293,$908F,$0097,$9079,$9088,$8A94,$008F
-	dw $8A72,$9494,$8D86,$9786,$8269,$8693,$8C8F,$9790
+	db "Smirnov "
+	db "Borodin "
+	db " Petrov "
+	db "Shalimov"
+	db " Yashin "
+	db " Krylov "
+	db "Jasykov "
+	db "Kushkov "
+	db "Urbanov "
+	db " Georgy "
+	db "Dmitriov"
+	db "Karasov "
+	db "Andropov"
+	db "Aleksov "
+	db "Vasilov "
+	db "Ditschko"
+	db "Baranov "
+	db "Rogosin "
+	db "Kisselev"
+	db "Barenkov"
 
 DATA_878AEE:
-	dw $957A,$8A86,$868F,$0093,$6900,$9396,$8A88,$0000
-	dw $9079,$8995,$9386,$0000,$936D,$8F82,$9084,$008F
-	dw $9079,$8685,$8D8D,$008A,$6900,$9682,$9386,$0000
-	dw $957A,$8582,$868D,$0093,$6F00,$9682,$8694,$0093
-	dw $7400,$9A86,$9386,$0000,$957A,$9093,$848D,$0089
-	dw $7C00,$838E,$9093,$0000,$7A00,$8E90,$8A87,$0000
-	dw $7900,$9596,$8A8D,$0000,$8676,$8A95,$888F,$9386
-	dw $6E00,$8882,$908F,$008F,$8F68,$8688,$9389,$008F
-	dw $9079,$8494,$8689,$0093,$7B00,$8293,$8694,$0093
-	dw $866B,$908D,$888F,$008A,$826A,$9494,$868D,$0093
+	db "Steiner "
+	db " Burgi  "
+	db "Rother  "
+	db "Francon "
+	db "Rodelli "
+	db " Bauer  "
+	db "Stadler "
+	db " Hauser "
+	db " Meyer  "
+	db "Strolch "
+	db " Umbro  "
+	db " Somfi  "
+	db " Rutli  "
+	db "Oetinger"
+	db " Gagnon "
+	db "Angehrn "
+	db "Roscher "
+	db " Traser "
+	db "Delongi "
+	db "Cassler "
 
 DATA_878B8E:
-	dw $9072,$8E94,$858A,$948A,$7500,$848A,$9490,$0000
-	dw $8A80,$8F82,$8A8F,$0094,$7700,$9782,$8A8D,$0094
-	dw $7700,$9182,$8291,$0094,$7200,$9490,$8295,$0094
-	dw $8F68,$9095,$8A8F,$0094,$8A6B,$8A8E,$9395,$9490
-	dw $7A00,$8A91,$9093,$0094,$6B00,$8C90,$9490,$0000
-	dw $8A6E,$9390,$9088,$0094,$7500,$8C8A,$9490,$0000
-	dw $0000,$9368,$948A,$0000,$9568,$9093,$8D88,$9490
-	dw $6800,$8995,$9490,$0000,$827D,$888F,$8D86,$948A
-	dw $7700,$9582,$9093,$0094,$6800,$868D,$908C,$0094
-	dw $896A,$8A93,$9594,$9490,$8D6E,$8F9A,$828A,$0094
+	db "Kosmidis"
+	db " Nicos  "
+	db "Yiannis "
+	db " Pavlis "
+	db " Pappas "
+	db " Kostas "
+	db "Antonis "
+	db "Dimitros"
+	db " Spiros "
+	db " Dokos  "
+	db "Giorgos "
+	db " Nikos  "
+	db "  Aris  "
+	db "Atroglos"
+	db " Athos  "
+	db "Vangelis"
+	db " Patros "
+	db " Alekos "
+	db "Christos"
+	db "Glynias "
 
 DATA_878C2E:
-	dw $7400,$9386,$8684,$0091,$9681,$8B8D,$9786,$848A
-	dw $9069,$8F94,$828A,$008C,$6900,$8C82,$8F90,$0096
-	dw $957A,$8B90,$848A,$0000,$8269,$9593,$8D96,$848A
-	dw $7D00,$8D96,$848A,$0000,$7700,$8F82,$848A,$0000
-	dw $7100,$9490,$848A,$0000,$7100,$8D96,$8470,$0000
-	dw $6800,$858F,$8A93,$0084,$8A75,$908C,$8A8D,$0084
-	dw $967D,$8A8D,$8A95,$0084,$7900,$9B86,$848A,$0000
-	dw $7A00,$9382,$848A,$0000,$7A00,$8291,$8A94,$0084
-	dw $937D,$8482,$9786,$848A,$827D,$8C8F,$9790,$848A
-	dw $966A,$908D,$8A97,$0084,$6B00,$8293,$8A88,$0084
+	db " Mercep "
+	db "Zuljevic"
+	db "Bosniak "
+	db " Bakonu "
+	db "Stojic  "
+	db "Bartulic"
+	db " Vulic  "
+	db " Panic  "
+	db " Josic  "
+	db " JulIc  "
+	db " Andric "
+	db "Nikolic "
+	db "Vulitic "
+	db " Rezic  "
+	db " Saric  "
+	db " Spasic "
+	db "Vracevic"
+	db "Vankovic"
+	db "Culovic "
+	db " Dragic "
 
 DATA_878CCE:
-	dw $7300,$6B54,$8F86,$008C,$827E,$858D,$868F,$0093
-	dw $546F,$8281,$8984,$9386,$546E,$936F,$9482,$828C
-	dw $546C,$9077,$958D,$0094,$9372,$8A86,$9494,$868D
-	dw $546B,$8672,$8F93,$9386,$7E00,$7E54,$9496,$0095
-	dw $8D77,$9582,$8F95,$9386,$9072,$8D89,$868E,$938A
-	dw $546E,$826E,$948F,$9386,$936B,$8A86,$8C94,$009A
-	dw $546F,$866F,$9B8F,$0086,$847A,$9389,$9590,$0089
-	dw $5471,$8D72,$9590,$009B,$967A,$8984,$8F82,$8C86
-	dw $9476,$8E95,$8F82,$008F,$9079,$8D89,$8586,$9386
-	dw $7100,$8C82,$8390,$0000,$0000,$936E,$8782,$0000
+	db " L.Denk "
+	db "Waldner "
+	db "H.Zacher"
+	db "G.Hraska"
+	db "E.Polts "
+	db "Kreissle"
+	db "D.Kerner"
+	db " W.Wust "
+	db "Plattner"
+	db "Kohlmeir"
+	db "G.Ganser"
+	db "Dreisky "
+	db "H.Henze "
+	db "Schroth "
+	db "J.Klotz "
+	db "Suchanek"
+	db "Ostmann "
+	db "Rohleder"
+	db " Jakob  "
+	db "  Graf  "
 
 DATA_878D6E:
-	dw $546C,$9080,$8F96,$0088,$546D,$906F,$8F93,$0086
-	dw $8977,$8D8A,$8A8D,$9491,$547A,$8A6E,$8383,$0094
-	dw $546A,$966F,$8988,$9486,$5479,$9071,$868F,$0094
-	dw $5471,$827E,$8C8D,$9386,$6F00,$7454,$9090,$008F
-	dw $5474,$8D69,$8482,$008C,$8674,$978D,$8D8A,$868D
-	dw $8671,$8C8F,$8F8A,$0094,$856C,$8298,$8593,$0094
-	dw $827A,$8F96,$8685,$9493,$907A,$9596,$8289,$8D8D
-	dw $546B,$9069,$8698,$008F,$6F00,$8896,$8689,$0094
-	dw $6C00,$8297,$948F,$0000,$6F00,$8F86,$9385,$009A
-	dw $7A00,$8298,$8F8A,$0000,$6E00,$888A,$9488,$0000
+	db "E.Young "
+	db "F.Horne "
+	db "Phillips"
+	db "S.Gibbs "
+	db "C.Hughes"
+	db "R.Jones "
+	db "J.Walker"
+	db " H.Moon "
+	db "M.Black "
+	db "Melville"
+	db "Jenkins "
+	db "Edwards "
+	db "Saunders"
+	db "Southall"
+	db "D.Bowen "
+	db " Hughes "
+	db " Evans  "
+	db " Hendry "
+	db " Swain  "
+	db " Giggs  "
 
 DATA_878E0E:
-	dw $546E,$8474,$826A,$8D8D,$546F,$966B,$8A93,$0086
-	dw $9079,$8683,$9593,$0090,$8474,$8D6A,$8A82,$0093
-	dw $5477,$8274,$918D,$9482,$8274,$9493,$8289,$8D8D
-	dw $8977,$9386,$9094,$008F,$5474,$8474,$957A,$9A82
-	dw $826E,$8D8D,$8482,$0089,$5475,$906E,$8896,$0089
-	dw $8474,$8273,$8693,$008F,$7700,$6954,$9A90,$0085
-	dw $826F,$9594,$8F8A,$9488,$5472,$9A7E,$9582,$0095
-	dw $5473,$906E,$8293,$008E,$7400,$6C84,$9097,$009A
-	dw $7100,$8482,$948C,$0000,$7400,$7584,$8382,$0000
-	dw $6A00,$8D82,$968D,$008E,$906A,$8F8F,$9390,$0094
+	db "G.McCall"
+	db "H.Durie "
+	db "Roberto "
+	db "McClair "
+	db "P.Malpas"
+	db "Marshall"
+	db "Pherson "
+	db "M.McStay"
+	db "Gallach "
+	db "N.Gough "
+	db "McLaren "
+	db " P.Boyd "
+	db "Hastings"
+	db "K.Wyatt "
+	db "L.Goram "
+	db " McEvoy "
+	db " Jacks  "
+	db " McNab  "
+	db " Callum "
+	db "Connors "
 
 DATA_878EAE:
-	dw $7800,$8A96,$8F8F,$0000,$7900,$9690,$8C93,$0086
-	dw $9678,$8F8A,$828D,$008F,$6B00,$9786,$8F8A,$0086
-	dw $966E,$8F8A,$868F,$9494,$7400,$9396,$8991,$009A
-	dw $7800,$8A96,$8C93,$0086,$8274,$9089,$868F,$009A
-	dw $8474,$936A,$8686,$9A85,$8669,$8D8D,$8F8A,$0088
-	dw $7A00,$828D,$8F8A,$0086,$906A,$8F8F,$8D86,$008D
-	dw $906B,$8896,$9589,$009A,$6A00,$8F90,$828D,$008F
-	dw $6D00,$8882,$8F82,$0000,$8277,$948A,$868D,$009A
-	dw $8474,$987A,$8686,$008F,$8277,$9395,$848A,$948C
-	dw $7100,$8E82,$9486,$0000,$6A00,$8A82,$008F,$0000
+	db " Quinn  "
+	db " Rourke "
+	db "Quinlan "
+	db " Devine "
+	db "Guinness"
+	db " Murphy "
+	db " Quirke "
+	db "Mahoney "
+	db "McCreedy"
+	db "Belling "
+	db " Slaine "
+	db "Connell "
+	db "Doughty "
+	db " Conlan "
+	db " Fagan  "
+	db "Paisley "
+	db "McSween "
+	db "Patricks"
+	db " James  "
+	db " Cain   "
 
 DATA_878F4E:
-	dw $0000,$9672,$828F,$0000,$8271,$9093,$8A8E,$0093
-	dw $7300,$8582,$8293,$0000,$9669,$8B93,$8F82,$8C86
-	dw $7A00,$8496,$9A89,$0000,$906F,$9793,$9582,$0089
-	dw $7D00,$8D90,$9A8F,$0000,$8669,$848F,$8494,$0089
-	dw $977A,$8390,$8590,$0082,$9075,$9097,$8F95,$009A
-	dw $6900,$828D,$869B,$008C,$9377,$8E86,$949A,$008D
-	dw $7D00,$8482,$828D,$0097,$7D00,$8C8A,$9095,$0093
-	dw $7100,$8C90,$008A,$0000,$7D00,$9486,$8D86,$008A
-	dw $6F00,$9390,$8C94,$0082,$7400,$888A,$9482,$0000
-	dw $8A77,$8297,$8F93,$8C8A,$6800,$8285,$868E,$0084
+	db "  Kuna  "
+	db "Jaromir "
+	db " Ladra  "
+	db "Burjanek"
+	db " Suchy  "
+	db "Horvath "
+	db " Volny  "
+	db "Bencsch "
+	db "Svoboda "
+	db "Novotny "
+	db " Blazek "
+	db "Premysl "
+	db " Vaclav "
+	db " Viktor "
+	db " Joki   "
+	db " Veseli "
+	db " Horska "
+	db " Migas  "
+	db "Pivarnik"
+	db " Adamec "
 
 DATA_878FEE:
-	dw $7900,$839A,$8C94,$008A,$7500,$9890,$8C82,$0000
-	dw $7500,$9390,$8A97,$0085,$9072,$8298,$948D,$8A8C
-	dw $9679,$9685,$848A,$8A8C,$9072,$988F,$848A,$8A8C
-	dw $7500,$8B82,$8285,$0000,$7100,$8F82,$9085,$0000
-	dw $6E00,$868A,$8693,$008C,$7400,$9496,$908A,$008D
-	dw $8B00,$8882,$8590,$0090,$6E00,$9396,$8685,$008C
-	dw $6F00,$8D82,$8382,$0082,$9B79,$9486,$909B,$9095
-	dw $7200,$9B90,$8F8A,$0082,$9672,$9683,$9B94,$8C90
-	dw $967B,$8693,$8C84,$008A,$8275,$9398,$8490,$8A8C
-	dw $8273,$8A91,$8C84,$008A,$7300,$8482,$0089,$0000
+	db " Rybski "
+	db " Nowak  "
+	db " Norvid "
+	db "Kowalski"
+	db "Ruduicki"
+	db "Konwicki"
+	db " Najda  "
+	db " Jando  "
+	db " Gierek "
+	db " Musiol "
+	db " jagodo "
+	db " Gurdek "
+	db " Halaba "
+	db "Rzeszoto"
+	db " Kozina "
+	db "Kubuszok"
+	db "Turecki "
+	db "Nawrocki"
+	db "Lapicki "
+	db " Lach   "
 
 DATA_87908E:
-	dw $8275,$828C,$8288,$8298,$8280,$828E,$829B,$8A8C
-	dw $7200,$8F90,$9085,$0000,$6F00,$9482,$8386,$0086
-	dw $897A,$8E8A,$9B8A,$0096,$7000,$908F,$8696,$0000
-	dw $8A75,$8994,$858A,$0082,$7200,$9B82,$8E82,$008A
-	dw $7600,$968C,$8285,$0000,$6F00,$9A8A,$8E82,$0082
-	dw $826F,$8A94,$908E,$9095,$8A74,$969B,$8295,$8A8F
-	dw $9080,$8994,$858A,$0082,$7400,$8F8A,$8E82,$008A
-	dw $897A,$8E8A,$8582,$0082,$7B00,$8382,$8A86,$0000
-	dw $7500,$8E82,$8283,$0000,$6F00,$8F82,$8A82,$0000
-	dw $7200,$9B90,$8C82,$0090,$0000,$8C68,$008A,$0000
+	db "Nakagawa"
+	db "Yamazaki"
+	db " Kondo  "
+	db " Hasebe "
+	db "Shimizu "
+	db " Inoue  "
+	db "Nishida "
+	db " Kazami "
+	db " Okuda  "
+	db " Hiyama "
+	db "Hasimoto"
+	db "Mizutani"
+	db "Yoshida "
+	db " Minami "
+	db "Shimada "
+	db " Tabei  "
+	db " Namba  "
+	db " Hanai  "
+	db " Kozako "
+	db "  Aki   "
 
 DATA_87912E:
-	dw $0000,$907A,$888F,$0000,$0000,$827B,$8C86,$0000
-	dw $0000,$8280,$888F,$0000,$0000,$8000,$0086,$0000
-	dw $0000,$896A,$8A90,$0000,$0000,$8A72,$008E,$0000
-	dw $0000,$9680,$008F,$0000,$0000,$8277,$8C93,$0000
-	dw $0000,$8673,$0086,$0000,$0000,$986F,$8F82,$0000
-	dw $6A00,$9089,$888F,$0000,$0000,$8A7A,$008F,$0000
-	dw $0000,$906F,$888F,$0000,$0000,$7200,$0090,$0000
-	dw $0000,$6E00,$0096,$0000,$0000,$9680,$008F,$0000
-	dw $0000,$896A,$8F90,$0000,$0000,$8277,$008C,$0000
-	dw $0000,$896A,$0082,$0000,$0000,$896A,$8A90,$0000
+	db "  Song  "
+	db "  Taek  "
+	db "  Yang  "
+	db "   Ye   "
+	db "  Choi  "
+	db "  Kim   "
+	db "  Yun   "
+	db "  Park  "
+	db "  Lee   "
+	db "  Hwan  "
+	db " Chong  "
+	db "  Sin   "
+	db "  Hong  "
+	db "   Ko   "
+	db "   Gu   "
+	db "  Yun   "
+	db "  Chon  "
+	db "  Pak   "
+	db "  Cha   "
+	db "  Choi  "
 
 DATA_8791CE:
-	dw $7A00,$9386,$828C,$008F,$8269,$959A,$9396,$0086
-	dw $6C00,$9493,$9B90,$0000,$7400,$8982,$938A,$0000
-	dw $6800,$918D,$9386,$0000,$826B,$8594,$8E86,$938A
-	dw $7B00,$8E82,$9386,$0000,$7500,$8582,$938A,$0000
-	dw $7500,$8E82,$8C96,$0000,$8000,$9482,$9382,$0000
-	dw $8868,$938A,$8284,$008F,$0000,$866E,$848F,$0000
-	dw $7A00,$9786,$8E8A,$0000,$6A00,$8D86,$8D82,$0000
-	dw $6D00,$9582,$898A,$0000,$9674,$9594,$9782,$0082
-	dw $8100,$8D96,$9687,$0000,$826A,$8C8F,$9A82,$0082
-	dw $6E00,$8C90,$8295,$008F,$7600,$959B,$9396,$008C
+	db " Serkan "
+	db "Bayture "
+	db " Ersoz  "
+	db " Mahir  "
+	db " Alper  "
+	db "Dasdemir"
+	db " Tamer  "
+	db " Nadir  "
+	db " Namuk  "
+	db " Yasar  "
+	db "Agircan "
+	db "  Genc  "
+	db " Sevim  "
+	db " Celal  "
+	db " Fatih  "
+	db "Mustava "
+	db " Zulfu  "
+	db "Cankaya "
+	db " Goktan "
+	db " Ozturk "
 
 DATA_87926E:
-	dw $6900,$8896,$8A93,$0000,$6900,$8C96,$9B86,$008A
-	dw $7500,$908C,$908E,$0000,$7C00,$8288,$8A91,$0000
-	dw $0000,$9069,$9083,$0000,$0000,$8679,$8A9B,$0000
-	dw $6900,$8D8A,$9382,$0000,$7500,$9486,$9689,$0000
-	dw $7B00,$8D82,$898A,$0082,$7400,$9682,$9093,$0000
-	dw $8000,$8C82,$8F96,$008A,$8568,$8386,$8582,$0086
-	dw $6C00,$838E,$838A,$008A,$8E68,$9196,$9590,$008A
-	dw $7600,$908C,$8984,$008A,$6C00,$938D,$9A90,$0000
-	dw $7200,$838A,$8683,$0086,$8100,$8698,$0085,$0000
-	dw $6C00,$8D8D,$9582,$0000,$827B,$8F96,$9095,$008F
+	db " Bugri  "
+	db " Bukezi "
+	db " Nkomo  "
+	db " Ugapi  "
+	db "  Bobo  "
+	db "  Rezi  "
+	db " Bilar  "
+	db " Neshu  "
+	db " Taliha "
+	db " Mauro  "
+	db " Yakuni "
+	db "Adebade "
+	db " Embibi "
+	db "Amupoti "
+	db " Okochi "
+	db " Elroy  "
+	db " Kibbee "
+	db " Zwed   "
+	db " Ellat  "
+	db "Taunton "
 
 DATA_87930E:
-	dw $8680,$8991,$9586,$0095,$7200,$988A,$008A,$0000
-	dw $6900,$8D82,$9690,$0000,$827B,$828C,$828F,$8A8C
-	dw $6800,$9083,$838E,$0086,$7A00,$9496,$008A,$0000
-	dw $7200,$9590,$0090,$0000,$7400,$8986,$8A85,$0000
-	dw $7400,$9683,$8298,$0000,$0000,$9073,$8A88,$0000
-	dw $6900,$9582,$8C8A,$0000,$7B00,$8984,$8D96,$008A
-	dw $7500,$8288,$8298,$0000,$0000,$8E76,$8683,$0000
-	dw $8274,$9083,$8F82,$0088,$6800,$8583,$8D96,$0000
-	dw $6E00,$9196,$8295,$0000,$7200,$9190,$8F8A,$0094
-	dw $987A,$9386,$8A8D,$008F,$8272,$8295,$888F,$0082
+	db "Yephett "
+	db " Kiwi   "
+	db " Balou  "
+	db "Takanaki"
+	db " Abombe "
+	db " Susi   "
+	db " Koto   "
+	db " Mehdi  "
+	db " Mbuwa  "
+	db "  Logi  "
+	db " Batik  "
+	db " Tchuli "
+	db " Ngawa  "
+	db "  Ombe  "
+	db "Maboang "
+	db " Abdul  "
+	db " Gupta  "
+	db " Kopins "
+	db "Swerlin "
+	db "Katanga "
 
 DATA_8793AE:
-	dw $9074,$8D96,$9A82,$0000,$8D7A,$748A,$8F82,$008A
-	dw $8273,$938E,$8F82,$008A,$7200,$9482,$9094,$0096
-	dw $6D00,$9386,$9482,$0000,$6800,$8293,$8287,$0000
-	dw $8279,$8494,$8A89,$0085,$0000,$8379,$828A,$0000
-	dw $8D6C,$6800,$899B,$9382,$8274,$9382,$9690,$8A87
-	dw $6900,$8E82,$9690,$0094,$9074,$8996,$9690,$0083
-	dw $7200,$8E82,$8D8A,$0000,$0000,$966D,$8582,$0000
-	dw $7900,$8382,$828A,$0000,$0000,$866D,$8285,$0000
-	dw $826D,$8893,$8F82,$008A,$6900,$8A82,$8295,$0093
-	dw $7700,$9382,$9586,$0000,$866B,$8294,$888D,$8F8A
+	db "Moulay  "
+	db "SliMani "
+	db "Lamrani "
+	db " Kassou "
+	db " Feras  "
+	db " Arafa  "
+	db "Raschid "
+	db "  Rbia  "
+	db "El Azhar"
+	db "Maaroufi"
+	db " Bamous "
+	db "Mouhoub "
+	db " Kamil  "
+	db "  Fuad  "
+	db " Rabia  "
+	db "  Feda  "
+	db "Fargani "
+	db " Baitar "
+	db " Paret  "
+	db "Desalgin"
 
 DATA_87944E:
-	dw $8285,$7A00,$8D8A,$8297,$866D,$9393,$8A86,$8293
-	dw $8A7D,$848F,$8F86,$9095,$0000,$8277,$9084,$0000
-	dw $6A00,$848A,$9386,$0090,$0000,$9079,$8284,$0000
-	dw $7A00,$8F82,$9095,$0094,$8277,$8593,$8D8A,$828D
-	dw $8669,$8293,$848F,$0090,$6E00,$8E90,$9B86,$0000
-	dw $6800,$8D8D,$8B86,$0090,$7A00,$9690,$8294,$0000
-	dw $8274,$8693,$888F,$9B86,$7500,$8886,$9093,$0094
-	dw $7900,$978A,$9386,$0090,$0000,$8673,$9082,$0000
-	dw $6A00,$8F82,$8D86,$008D,$906D,$958F,$8F82,$0082
-	dw $7A00,$8F86,$908A,$0093,$7A00,$8F86,$8486,$0082
+	db "da Silva"
+	db "Ferreira"
+	db "Vincento"
+	db "  Paco  "
+	db " Cicero "
+	db "  Roca  "
+	db " Santos "
+	db "Pardilla"
+	db "Beranco "
+	db " Gomez  "
+	db " Allejo "
+	db " Sousa  "
+	db "Marengez"
+	db " Negros "
+	db " Rivero "
+	db "  Leao  "
+	db " Canell "
+	db "Fontana "
+	db " Senior "
+	db " Seneca "
 
 DATA_8794EE:
-	dw $6E00,$9382,$8A84,$0082,$827D,$9294,$8696,$009B
-	dw $6A00,$9490,$8295,$0000,$906B,$8A8E,$888F,$0090
-	dw $6800,$868D,$9593,$0090,$7A00,$8F82,$9095,$0094
-	dw $866F,$8693,$8A95,$9386,$0000,$8677,$828F,$0000
-	dw $8679,$9085,$858F,$0082,$6D00,$8696,$9593,$0086
-	dw $826A,$8A91,$8295,$868D,$7700,$8382,$908D,$0000
-	dw $6900,$9482,$8D8A,$0086,$9074,$8693,$8D8D,$008A
-	dw $7900,$9186,$8D82,$0082,$0000,$826F,$908B,$0000
-	dw $0000,$8673,$8F90,$0000,$7900,$978A,$9482,$0000
-	dw $946C,$9395,$8582,$0086,$8274,$9B8F,$8F82,$0090
+	db " Garcia "
+	db "Vasquez "
+	db " Costa  "
+	db "Domingo "
+	db " Alerto "
+	db " Santos "
+	db "Heretier"
+	db "  Pena  "
+	db "Redonda "
+	db " Fuerte "
+	db "Capitale"
+	db " Pablo  "
+	db " Basile "
+	db "Morelli "
+	db " Repala "
+	db "  Hajo  "
+	db "  Leon  "
+	db " Rivas  "
+	db "Estrade "
+	db "Manzano "
 
 DATA_87958E:
-	dw $6F00,$8786,$8687,$009B,$7A00,$8296,$8693,$009B
-	dw $7400,$8696,$9385,$0082,$8279,$8A8E,$8693,$009B
-	dw $8D68,$8683,$9593,$0090,$7700,$9386,$9386,$0082
-	dw $8D68,$908E,$958F,$0090,$9074,$958F,$9A90,$0082
-	dw $9674,$8A93,$8D8D,$0090,$7700,$9386,$9B86,$0000
-	dw $8D68,$8297,$8693,$009B,$6E00,$9382,$8A84,$0082
-	dw $8274,$9593,$8F8A,$9B86,$6D00,$908D,$8693,$0094
-	dw $866F,$9393,$9386,$0082,$6D00,$9386,$9093,$0000
-	dw $946C,$9084,$8283,$0093,$7A00,$8D8A,$8A97,$0090
-	dw $7400,$9382,$9084,$0000,$8A69,$8D8D,$9382,$9085
+	db " Heffez "
+	db " Suarez "
+	db " Muedra "
+	db "Ramirez "
+	db "Alberto "
+	db " Perera "
+	db "Almonto "
+	db "Montoya "
+	db "Murillo "
+	db " Perez  "
+	db "Alvarez "
+	db " Garcia "
+	db "Martinez"
+	db " Flores "
+	db "Herrera "
+	db " Ferro  "
+	db "Escobar "
+	db " Silvio "
+	db " Marco  "
+	db "Billardo"
 
 DATA_87962E:
-	dw $7300,$9086,$868F,$0000,$7900,$978A,$9386,$0082
-	dw $8468,$9084,$9594,$0082,$827A,$828D,$829B,$0093
-	dw $7700,$9386,$9B86,$0000,$827A,$848F,$8689,$009B
-	dw $0000,$9074,$829A,$0000,$7300,$9190,$9B86,$0000
-	dw $8A74,$828D,$9388,$0090,$0000,$8A6B,$9B82,$0000
-	dw $7400,$8F96,$9B90,$0000,$946C,$8A91,$908F,$829B
-	dw $9074,$958F,$8886,$828F,$7400,$8586,$8F8A,$0082
-	dw $6800,$9393,$9A90,$0090,$8D68,$8297,$8693,$009B
-	dw $906E,$9B8F,$8D82,$9486,$7700,$9386,$8586,$0082
-	dw $936D,$8882,$9490,$0090,$8277,$8A85,$8D8D,$0082
+	db " Leone  "
+	db " Rivera "
+	db "Accosta "
+	db "Salazar "
+	db " Perez  "
+	db "Sanchez "
+	db "  Moya  "
+	db " Lopez  "
+	db "Milagro "
+	db "  Diaz  "
+	db " Munoz  "
+	db "Espinoza"
+	db "Montegna"
+	db " Medina "
+	db " Arroyo "
+	db "Alvarez "
+	db "Gonzales"
+	db " Pereda "
+	db "Fragoso "
+	db "Padilla "
 
 DATA_8796CE:
-	dw $0000,$966B,$868C,$0000,$6F00,$9386,$828E,$008F
-	dw $906B,$8896,$9589,$009A,$6C00,$8A98,$888F,$0000
-	dw $7300,$9882,$9094,$008F,$8274,$8493,$908A,$008F
-	dw $7500,$9A90,$9486,$0000,$6800,$828E,$8A95,$0000
-	dw $936E,$878A,$8A87,$008F,$8277,$8484,$9382,$009A
-	dw $0000,$8A72,$888F,$0000,$8D68,$868D,$828B,$908F
-	dw $7400,$8286,$0085,$0000,$7A00,$8695,$8F93,$0000
-	dw $6B00,$9A90,$868D,$0000,$7E00,$8A89,$8695,$0000
-	dw $8A74,$8984,$8682,$948D,$6D00,$9490,$8695,$0093
-	dw $906E,$8590,$828E,$008F,$7B00,$9396,$868F,$0093
+	db "  Duke  "
+	db " Herman "
+	db "Doughty "
+	db " Ewing  "
+	db " Lawson "
+	db "Marcion "
+	db " Noyes  "
+	db " Amati  "
+	db "Griffin "
+	db "Paccary "
+	db "  King  "
+	db "Allejano"
+	db " Mead   "
+	db " Stern  "
+	db " Doyle  "
+	db " White  "
+	db "Michaels"
+	db " Foster "
+	db "Goodman "
+	db " Turner "
 
 DATA_87976E:
-	dw $867D,$958F,$9396,$0082,$8F68,$8984,$9586,$0082
-	dw $7D00,$9382,$8288,$0094,$6A00,$9390,$8695,$0094
-	dw $8E7C,$8683,$9593,$0090,$826A,$9594,$8D86,$908D
-	dw $6E00,$8A93,$8486,$0090,$826A,$9586,$8F82,$0090
-	dw $7A00,$8D8A,$8297,$0000,$6A00,$8A89,$828F,$0000
-	dw $8000,$8F82,$9B86,$0000,$7900,$8490,$8289,$0000
-	dw $0000,$9679,$9B8A,$0000,$7900,$978A,$9482,$0000
-	dw $7400,$8F96,$9B90,$0000,$0000,$9679,$9B8A,$0000
-	dw $8685,$008D,$9077,$909B,$6800,$828D,$8A93,$0090
-	dw $7400,$9582,$9086,$0094,$8100,$8E82,$8F90,$0000
+	db "Ventura "
+	db "Ancheta "
+	db " Vargas "
+	db " Cortes "
+	db "Umberto "
+	db "Castello"
+	db " Grieco "
+	db "Caetano "
+	db " Silva  "
+	db " China  "
+	db " Yanez  "
+	db " Rocha  "
+	db "  Ruiz  "
+	db " Rivas  "
+	db " Munoz  "
+	db "  Ruiz  "
+	db "del Pozo"
+	db " Alario "
+	db " Mateos "
+	db " Zamon  "
 
 DATA_87980E:
-	dw $0100,$4E2A,$0D08,$0000,$1600,$270A,$000D,$0000
-	dw $1C00,$3F49,$2B57,$0000,$0800,$2E27,$0012,$0000
-	dw $3F00,$090D,$000D,$0000,$1C00,$294C,$2E15,$003D
-	dw $4600,$202B,$2904,$0000,$3100,$1128,$1C4C,$0000
-	dw $2000,$5750,$5727,$0000,$3500,$3F51,$162E,$0000
-	dw $3E00,$274A,$3D2E,$0029,$0600,$2B29,$000D,$0000
-	dw $0400,$100D,$1057,$0000,$2300,$2857,$000D,$0000
-	dw $0400,$4E28,$0008,$0000,$0400,$4E28,$0008,$0000
-	dw $0400,$4E28,$0008,$0000,$0400,$4E28,$0008,$0000
-	dw $0400,$4E28,$0008,$0000,$0400,$4E28,$0008,$0000
+	db $00,$01,$2A,$4E,$08,$0D,$00,$00
+	db $00,$16,$0A,$27,$0D,$00,$00,$00
+	db $00,$1C,$49,$3F,$57,$2B,$00,$00
+	db $00,$08,$27,$2E,$12,$00,$00,$00
+	db $00,$3F,$0D,$09,$0D,$00,$00,$00
+	db $00,$1C,$4C,$29,$15,$2E,$3D,$00
+	db $00,$46,$2B,$20,$04,$29,$00,$00
+	db $00,$31,$28,$11,$4C,$1C,$00,$00
+	db $00,$20,$50,$57,$27,$57,$00,$00
+	db $00,$35,$51,$3F,$2E,$16,$00,$00
+	db $00,$3E,$4A,$27,$2E,$3D,$29,$00
+	db $00,$06,$29,$2B,$0D,$00,$00,$00
+	db $00,$04,$0D,$10,$57,$10,$00,$00
+	db $00,$23,$57,$28,$0D,$00,$00,$00
+	db $00,$04,$28,$4E,$08,$00,$00,$00
+	db $00,$04,$28,$4E,$08,$00,$00,$00
+	db $00,$04,$28,$4E,$08,$00,$00,$00
+	db $00,$04,$28,$4E,$08,$00,$00,$00
+	db $00,$04,$28,$4E,$08,$00,$00,$00
+	db $00,$04,$28,$4E,$08,$00,$00,$00
+
+cleartable
 
 UNK_8798AE:
 	dw DATA_87818E,DATA_87822E,DATA_8782CE,DATA_87836E,DATA_87840E,DATA_8784AE,DATA_87854E,DATA_8785EE
@@ -103923,38 +104298,50 @@ DATA_87C016:
 	dw $01F6,$01F7,$01F8,$01F9,$01FA,$01FB,$01FC,$01FD
 	dw $01FE,$01FF,$017E,$017F
 
+cleartable
+table "tables/fonts/TallMenuText.txt"
+
 DATA_87C1FE:
-	db $FD,$3C,$0D,$0E,$0F
+	db $FD : db $3C
+	db $0D,$0E,$0F
 
 DATA_87C203:
-	db $FD,$3C,$27,$28
+	db $FD : db $3C
+	db $27,$28
 
 DATA_87C207:
-	db $FD,$3C,$29,$2A,$2B,$FD,$38,$2C,$FD,$3C,$29,$2A,$2B,$FD,$38,$2D
+	db $FD : db $3C
+	db $29,$2A,$2B,$FD,$38,$2C,$FD,$3C,$29,$2A,$2B,$FD,$38,$2D
 
 DATA_87C217:
-	db $FD,$3C,$B2,$B3,$B4,$B5
+	db $FD : db $3C
+	db $B2,$B3,$B4,$B5
 
 DATA_87C21D:
-	db $FD,$3C,$B1,$B1,$B1,$B1,$B1,$B1,$B1,$B1,$B1,$B1
+	db $FD : db $3C
+	db $B1,$B1,$B1,$B1,$B1,$B1,$B1,$B1,$B1,$B1
 
 DATA_87C229:
 	dw DATA_87C26F,DATA_87C287,DATA_87C29F,DATA_87C2B7,DATA_87C2CF,DATA_87C2E7,DATA_87C2FF
 
 DATA_87C237:
-	db $FD,$38,$01,$02,$02,$02,$02,$02,$02,$02,$02,$02,$FD,$78,$01,$FD
+	db $FD : db $38
+	db $01,$02,$02,$02,$02,$02,$02,$02,$02,$02,$FD,$78,$01,$FD
 	db $38,$03,$04,$04,$04,$04,$04,$04,$04,$04,$04,$FD,$78,$03
 
 DATA_87C255:
-	db $FD,$38,$01,$02,$02,$02,$02,$02,$02,$02,$FD,$78,$01,$FD,$38,$03
+	db $FD : db $38
+	db $01,$02,$02,$02,$02,$02,$02,$02,$FD,$78,$01,$FD,$38,$03
 	db $04,$04,$04,$04,$04,$04,$04,$FD,$78,$03
 
 DATA_87C26F:
-	db $FD,$38,$01,$02,$02,$02,$02,$02,$02,$FD,$78,$01,$FD,$38,$03,$04
+	db $FD : db $38
+	db $01,$02,$02,$02,$02,$02,$02,$FD,$78,$01,$FD,$38,$03,$04
 	db $04,$04,$04,$04,$04,$FD,$78,$03
 
 DATA_87C287:
-	db $FD,$28,$01,$02,$02,$02,$02,$02,$02,$FD,$68,$01,$FD,$28,$03,$04
+	db $FD : db $28
+	db $01,$02,$02,$02,$02,$02,$02,$FD,$68,$01,$FD,$28,$03,$04
 	db $04,$04,$04,$04,$04,$FD,$68,$03
 
 DATA_87C29F:
@@ -104097,8 +104484,7 @@ DATA_87C5BD:
 	db $00,$E4,$E6,$E8,$EA,$EC,$EE,$00,$00,$E5,$E7,$E9,$EB,$ED,$EF,$00
 
 DATA_87C5CD:
-	db $57,$7A,$6C,$73,$6C,$6A,$7B,$00,$00,$7B,$6F,$00,$7B,$6C,$68,$74
-	db $57
+	db "-SELECT  TH TEAM-"
 
 DATA_87C5DE:
 	dw DATA_87C5EE,DATA_87C5F0,DATA_87C5F2,DATA_87C5F4,DATA_87C5F4,DATA_87C5F4,DATA_87C5F4,DATA_87C5F4
@@ -104115,13 +104501,19 @@ DATA_87C5F2:
 DATA_87C5F4:
 	db $7B,$6F
 
+cleartable
+table "tables/fonts/SmallMenuText.txt"
+
 DATA_87C5F6:
-	db $00,$1D,$0F,$16,$0F,$0D,$1E,$00,$00,$00,$00,$0B,$1D,$1D,$13,$11
-	db $18,$17,$0F,$18,$1E,$1D
+	db " SELECT    ASSIGNMENTS"
 
 DATA_87C60C:
-	db $1F,$1A,$00,$1E,$19,$00,$FC,$1D,$3E,$2B,$3C,$3D,$32,$3D,$3E,$3D
-	db $2E,$3C
+	db "UP TO "
+	db $FC
+	db "Substitutes"
+
+cleartable
+table "tables/fonts/TallMenuText.txt"
 
 DATA_87C61E:
 	db $72,$73,$74,$75
@@ -104286,7 +104678,7 @@ DATA_87C7FC:
 	db $0A,$01,$A9,$AA,$AB
 
 DATA_87C811:
-	db $57,$6F,$68,$75,$6B,$70,$6A,$68,$77,$57
+	db "-HANDICAP-"
 
 DATA_87C81B:
 	db $92,$94,$96,$98,$93,$95,$97,$99
@@ -104311,39 +104703,52 @@ DATA_87C85D:
 	db $8A,$8B,$8C,$8D,$00,$00,$8E,$8F,$90,$91
 
 DATA_87C867:
-	db $FD,$3C,$39,$3B,$FB,$04,$39,$3B,$3A,$3C,$FB,$04,$3A,$3C
+	db $FD : db $3C
+	db $39,$3B,$FB,$04,$39,$3B,$3A,$3C,$FB,$04,$3A,$3C
 
 DATA_87C875:
-	db $00,$65,$77,$00,$66,$77,$00,$67,$77,$5F,$5E,$77,$5F,$5F,$77
+	db " 7P"
+	db " 8P"
+	db " 9P"
+	db "10P"
+	db "11P"
 
 DATA_87C884:
-	db $77,$93,$86,$94,$94,$00,$95,$89,$86,$00,$94,$86,$8D,$86,$84,$95
-	db $00,$83,$96,$95,$95,$90,$8F,$00,$95,$90,$00,$84,$89,$82,$8F,$88
-	db $86,$00,$5F,$77,$00,$82,$8F,$85,$00,$6A,$77,$7C,$00,$84,$90,$8F
-	db $95,$93,$90,$8D,$94,$54
+	db "Press the select button to change 1P and CPU controls."
+
+cleartable
+table "tables/fonts/SmallMenuText.txt"
 
 DATA_87C8BA:
-	db $18,$19,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$1E,$0B,$0D
-	db $1E,$13,$0D,$1D
+	db "NO        "
+	db "   TACTICS"
 
 DATA_87C8CE:
-	db $0B,$16,$16,$00,$19,$1F,$1E,$00,$00,$00,$00,$00,$00,$0B,$1E,$1E
-	db $0B,$0D,$15,$00,$1A,$1F,$1D,$12,$00,$0B,$16,$19,$18,$11,$00,$00
-	db $00,$0D,$0F,$18,$1E,$0F,$1C,$00,$1A,$1F,$1D,$12,$00,$0B,$16,$19
-	db $18,$11,$00,$00,$00,$21,$13,$18,$11,$1D,$00,$00,$0D,$19,$1F,$18
-	db $1E,$0F,$1C,$00,$00,$00,$00,$00,$00,$0B,$1E,$1E,$0B,$0D,$15,$00
+	db "ALL OUT   "
+	db "   ATTACK "
+	db "PUSH ALONG"
+	db "   CENTER "
+	db "PUSH ALONG"
+	db "   WINGS  "
+	db "COUNTER   "
+	db "   ATTACK "
 
 DATA_87C91E:
-	db $0B,$16,$16,$00,$19,$1F,$1E,$00,$00,$00,$00,$00,$00,$0E,$0F,$10
-	db $0F,$18,$1D,$0F,$1A,$1C,$0F,$1D,$1D,$00,$1F,$1A,$00,$00,$00,$00
-	db $00,$00,$00,$00,$00,$00,$00,$00,$24,$19,$18,$0F,$00,$1A,$1C,$0F
-	db $1D,$1D,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$19,$10,$10,$1D
-	db $13,$0E,$0F,$00,$00,$00,$00,$00,$00,$00,$00,$00,$1E,$1C,$0B,$1A
+	db "ALL OUT   "
+	db "   DEFENSE"
+	db "PRESS UP  "
+	db "          "
+	db "ZONE PRESS"
+	db "          "
+	db "OFFSIDE   "
+	db "      TRAP"
 
 DATA_87C96E:
-	db $46,$0B,$0E,$14,$1F,$1D,$1E,$00,$00,$00,$00,$00,$1D,$1E,$1C,$0B
-	db $1E,$0F,$11,$23,$FC,$FC,$46,$0B,$0E,$14,$1F,$1D,$1E,$00,$00,$00
-	db $00,$00,$0E,$13,$1D,$1A,$16,$0B,$23,$00
+	db $46,"ADJUST   "
+	db "  STRATEGY"
+	db $FC,$FC
+	db $46,"ADJUST   "
+	db "  DISPLAY "
 
 DATA_87C998:
 	db $68,$69,$7F,$80
@@ -104352,62 +104757,92 @@ DATA_87C99C:
 	db $73
 
 DATA_87C99D:
-	db $0B,$0E,$14,$1F,$1D,$1E,$00,$00,$00,$00,$00,$0E,$13,$1D,$1A,$16
-	db $0B,$23,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$46,$18
-	db $19,$18,$0F,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00
-	db $00,$00,$46,$0E,$13,$1D,$1A,$16,$0B,$23,$1D,$00,$00,$00,$19,$18
-	db $16,$23,$00,$00,$00,$00,$46,$0E,$13,$1D,$1A,$16,$0B,$23,$1D,$00
-	db $00,$00,$1D,$1E,$1C,$0B,$1E,$0F,$11,$23
+	db "ADJUST    "
+	db " DISPLAY  "
+	db "          "
+	db $46,"NONE     "
+	db "          "
+	db $46,"DISPLAYS "
+	db "  ONLY    "
+	db $46,"DISPLAYS "
+	db "  STRATEGY"
 
 DATA_87C9F7:
-	db $46,$FB,$0C,$46,$46,$FB,$0C,$46,$46,$FB,$0C,$46,$46,$FB,$0C,$46
+	db $46
+	db $FB : db $0C
+	db $46,$46
+	db $FB : db $0C
+	db $46,$46
+	db $FB : db $0C
+	db $46,$46
+	db $FB : db $0C
+	db $46
 
 DATA_87CA07:
-	db $18,$1F,$17,$0C,$0F,$1C,$00,$19,$10,$00,$00,$00,$1D,$1E,$1C,$0B
-	db $1E,$0F,$11,$13,$0F,$1D
+	db "NUMBER OF   STRATEGIES"
+
+cleartable
+table "tables/fonts/TallMenuText.txt"
 
 DATA_87CA1D:
-	db $76,$75,$6C,$00,$6D,$76,$7C,$79
+	db "ONE FOUR"
 
 DATA_87CA25:
-	db $75,$7C,$74,$69,$6C,$79,$00,$76,$6D,$00,$77,$73,$68,$80,$6C,$79
-	db $7A
+	db "NUMBER OF PLAYERS"
 
 DATA_87CA36:
-	db $57,$7A,$7B,$68,$6B,$70,$7C,$74,$00,$7A,$6C,$73,$6C,$6A,$7B,$57
+	db "-STADIUM SELECT-"
 
 DATA_87CA46:
 	db $42
 
+cleartable
+table "tables/fonts/SmallMenuText.txt"
+
 DATA_87CA47:
-	db $1D,$18,$19,$21,$FB,$04,$10,$13,$18,$0F,$FB,$04,$1C,$0B,$13,$18
+	db "SNOW"
+	db $FB : db $04
+	db "FINE"
+	db $FB : db $04
+	db "RAIN"
+
+cleartable
+table "tables/fonts/TallMenuText.txt"
 
 DATA_87CA57:
-	db $00,$00,$57,$7B,$76,$6B,$68,$80,$5A,$7A,$00,$6E,$68,$74,$6C,$57
+	db "  -TODAY'S GAME-"
 
 DATA_87CA67:
-	db $57,$7B,$76,$75,$70,$6E,$6F,$7B,$5A,$7A,$00,$6E,$68,$74,$6C,$57
+	db "-TONIGHT'S GAME-"
 
 DATA_87CA77:
-	db $6A,$76,$75,$6B,$70,$7B,$70,$76,$75
+	db "CONDITION"
 
 DATA_87CA80:
-	db $7A,$75,$76,$7E,$6D,$70,$75,$6C,$79,$68,$70,$75
+	db "SNOW"
+	db "FINE"
+	db "RAIN"
 
 DATA_87CA8C:
-	db $5F,$61,$5C,$5E,$5E,$5F,$64,$5C,$5E,$5E,$5F,$67,$5C,$5E,$5E
+	db "13:00"
+	db "16:00"
+	db "19:00"
 
 DATA_87CA9B:
-	db $00,$00,$71,$68,$77,$68,$75,$00,$00,$7C,$54,$7A,$54,$68,$00,$00
-	db $7A,$77,$68,$70,$75,$00,$00,$70,$7B,$68,$73,$80,$6C,$75,$6E,$73
-	db $68,$75,$6B,$6E,$6C,$79,$74,$68,$75,$80,$00,$69,$79,$68,$81,$70
-	db $73,$75,$70,$6E,$6C,$79,$70,$68
+	db "  JAPAN"
+	db "  U.S.A"
+	db "  SPAIN"
+	db "  ITALY"
+	db "ENGLAND"
+	db "GERMANY"
+	db " BRAZIL"
+	db "NIGERIA"
 
 DATA_87CAD3:
-	db $7A,$7B,$68,$6B,$70,$7C,$74
+	db "STADIUM"
 
 DATA_87CADA:
-	db $6E,$68,$74,$6C,$00,$7A,$7B,$68,$79,$7B
+	db "GAME START"
 
 DATA_87CAE4:
 	db $78,$7A,$7C,$79,$7B,$7D
@@ -104422,7 +104857,7 @@ DATA_87CAF6:
 	db $57,$68,$57,$68
 
 DATA_87CAFA:
-	db $68,$7C,$7B,$76,$00
+	db "AUTO "
 
 DATA_87CAFF:
 	db $84,$86,$88,$8A,$8C,$85,$87,$89,$8B,$8D
@@ -104434,319 +104869,257 @@ DATA_87CB0F:
 	dw DATA_87CB2B,DATA_87CB64,DATA_87CBD5,DATA_87CC46,DATA_87CD26,DATA_87CDB3,DATA_87CE40,DATA_87CECD
 	dw DATA_87CFAE,DATA_87D03B,DATA_87D0C8,DATA_87D155,DATA_87D1E2,DATA_87D253
 
+cleartable
+table "tables/fonts/SmallMenuText.txt"
+
 DATA_87CB2B:
-	db $1E,$3E,$3B,$37,$00,$3D,$31,$2E,$00,$39,$2A,$30,$2E,$00,$2B,$42
-	db $00,$39,$3B,$2E,$3C,$3C,$32,$37,$30,$00,$00,$00,$3D,$31,$2E,$00
-	db $16,$51,$1C,$00,$2B,$3E,$3D,$3D,$38,$37,$3C,$29,$00,$00,$00,$00
-	db $00,$00,$00,$00,$00,$00,$00,$00,$FF
+	db "Turn the page by pressing   "
+	db "the L/R buttons.            "
+	db $FF
 
 DATA_87CB64:
-	db $26,$0D,$38,$37,$3D,$3B,$38,$35,$35,$2E,$3B,$00,$1E,$42,$39,$2E
-	db $26,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$12,$2E,$3B,$2E
-	db $50,$3C,$00,$2A,$00,$35,$32,$3C,$3D,$00,$38,$2F,$00,$3D,$31,$2E
-	db $00,$00,$00,$00,$00,$00,$00,$00,$2D,$32,$2F,$2F,$2E,$3B,$2E,$37
-	db $3D,$00,$2C,$38,$37,$3D,$3B,$38,$35,$35,$2E,$3B,$00,$36,$2E,$3D
-	db $31,$38,$2D,$3C,$2A,$3F,$2A,$32,$35,$2A,$2B,$35,$2E,$00,$3D,$38
-	db $00,$42,$38,$3E,$29,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00
+	db "-Controller Type-           "
+	db "Here's a list of the        "
+	db "different controller methods"
+	db "available to you.           "
 	db $FF
 
 DATA_87CBD5:
-	db $26,$0B,$00,$1E,$23,$1A,$0F,$26,$00,$00,$00,$00,$00,$00,$00,$00
-	db $00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$17,$38,$3F,$2E
-	db $3C,$00,$3D,$31,$2E,$00,$2C,$38,$37,$3D,$3B,$38,$35,$00,$2C,$3E
-	db $3B,$3C,$38,$3B,$00,$3D,$38,$00,$3D,$31,$2E,$00,$3D,$40,$38,$00
-	db $39,$35,$2A,$42,$2E,$3B,$3C,$00,$2C,$35,$38,$3C,$2E,$3C,$3D,$00
-	db $3D,$38,$00,$00,$3D,$31,$2E,$00,$2B,$2A,$35,$35,$29,$00,$00,$00
-	db $00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00
+	db "-A TYPE-                    "
+	db "Moves the control cursor to "
+	db "the two players closest to  "
+	db "the ball.                   "
 	db $FF
 
 DATA_87CC46:
-	db $26,$0C,$00,$1E,$23,$1A,$0F,$26,$00,$00,$00,$00,$00,$00,$00,$00
-	db $00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$17,$38,$3F,$2E
-	db $3C,$00,$3D,$31,$2E,$00,$2C,$3E,$3B,$3C,$38,$3B,$00,$3D,$38,$00
-	db $3D,$31,$2E,$00,$3D,$40,$38,$00,$2D,$2E,$2F,$2E,$37,$3C,$2E,$00
-	db $39,$35,$2A,$42,$2E,$3B,$3C,$00,$2C,$35,$38,$3C,$2E,$3C,$3D,$00
-	db $3D,$38,$00,$00,$3D,$31,$2E,$00,$2B,$2A,$35,$35,$29,$13,$2F,$00
-	db $3D,$31,$2E,$3B,$2E,$00,$2A,$3B,$2E,$00,$37,$38,$00,$00,$00,$00
-	db $2D,$2E,$2F,$2E,$37,$3C,$2E,$00,$39,$35,$2A,$42,$2E,$3B,$3C,$00
-	db $37,$2E,$2A,$3B,$00,$3D,$31,$2E,$00,$00,$00,$00,$2C,$38,$37,$3D
-	db $3B,$38,$35,$00,$2C,$3E,$3B,$3C,$38,$3B,$00,$40,$32,$35,$35,$00
-	db $2B,$2E,$00,$36,$38,$3F,$2E,$2D,$3D,$38,$00,$3D,$31,$2E,$00,$2C
-	db $35,$38,$3C,$2E,$3C,$3D,$00,$39,$35,$2A,$42,$2E,$3B,$00,$00,$00
-	db $00,$00,$00,$00,$3D,$38,$00,$3D,$31,$2E,$00,$2B,$2A,$35,$35,$29
-	db $00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00
+	db "-B TYPE-                    "
+	db "Moves the cursor to the two "
+	db "defense players closest to  "
+	db "the ball.If there are no    "
+	db "defense players near the    "
+	db "control cursor will be moved"
+	db "to the closest player       "
+	db "to the ball.                "
 
 DATA_87CD26:
-	db $26,$0D,$00,$1E,$23,$1A,$0F,$26,$00,$00,$00,$00,$00,$00,$00,$00
-	db $00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$17,$38,$3F,$2E
-	db $3C,$00,$3D,$31,$2E,$00,$2C,$38,$37,$3D,$3B,$38,$35,$00,$2C,$3E
-	db $3B,$3C,$38,$3B,$00,$32,$37,$00,$3D,$31,$2E,$00,$2D,$32,$3B,$2E
-	db $2C,$3D,$32,$38,$37,$00,$42,$38,$3E,$00,$2C,$31,$38,$38,$3C,$2E
-	db $00,$00,$00,$00,$40,$32,$3D,$31,$00,$3D,$31,$2E,$00,$0E,$26,$1A
-	db $2A,$2D,$00,$3D,$38,$40,$2A,$3B,$2D,$3C,$00,$00,$00,$00,$00,$00
-	db $3D,$31,$2E,$00,$2B,$2A,$35,$35,$29,$00,$00,$00,$00,$00,$00,$00
-	db $00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$FF
+	db "-C TYPE-                    "
+	db "Moves the control cursor in "
+	db "the direction you choose    "
+	db "with the D-Pad towards      "
+	db "the ball.                   "
+	db $FF
 
 DATA_87CDB3:
-	db $26,$0E,$00,$1E,$23,$1A,$0F,$26,$00,$00,$00,$00,$00,$00,$00,$00
-	db $00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$17,$38,$3F,$2E
-	db $3C,$00,$3D,$31,$2E,$00,$2C,$38,$37,$3D,$3B,$38,$35,$00,$2C,$3E
-	db $3B,$3C,$38,$3B,$00,$32,$37,$00,$3D,$31,$2E,$00,$2D,$32,$3B,$2E
-	db $2C,$3D,$32,$38,$37,$00,$42,$38,$3E,$00,$2C,$31,$38,$38,$3C,$2E
-	db $00,$00,$00,$00,$40,$32,$3D,$31,$00,$3D,$31,$2E,$00,$0E,$26,$1A
-	db $2A,$2D,$00,$3D,$38,$40,$2A,$3B,$2D,$3C,$00,$00,$00,$00,$00,$00
-	db $3D,$31,$2E,$00,$37,$2E,$2A,$3B,$2E,$3C,$3D,$00,$39,$35,$2A,$42
-	db $2E,$3B,$29,$00,$00,$00,$00,$00,$00,$00,$00,$00,$FF
+	db "-D TYPE-                    "
+	db "Moves the control cursor in "
+	db "the direction you choose    "
+	db "with the D-Pad towards      "
+	db "the nearest player.         "
+	db $FF
 
 DATA_87CE40:
-	db $26,$0B,$1C,$0F,$0B,$26,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00
-	db $00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$0D,$38,$37,$3D
-	db $3B,$38,$35,$35,$2E,$3B,$00,$1E,$42,$39,$2E,$00,$00,$00,$00,$00
-	db $00,$00,$00,$00,$00,$00,$00,$00,$12,$2E,$3B,$2E,$50,$3C,$00,$2A
-	db $00,$35,$32,$3C,$3D,$00,$38,$2F,$00,$3D,$31,$2E,$00,$00,$00,$00
-	db $00,$00,$00,$00,$2D,$32,$2F,$2F,$2E,$3B,$2E,$37,$3D,$00,$2C,$38
-	db $37,$3D,$3B,$38,$35,$35,$2E,$3B,$00,$36,$2E,$3D,$31,$38,$2D,$3C
-	db $2A,$3F,$2A,$32,$35,$2A,$2B,$35,$2E,$00,$3D,$38,$00,$42,$38,$3E
-	db $29,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$FF
+	db "-AREA-                      "
+	db "Controller Type             "
+	db "Here's a list of the        "
+	db "different controller methods"
+	db "available to you.           "
+	db $FF
 
 DATA_87CECD:
-	db $26,$0B,$1C,$0F,$0B,$26,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00
-	db $00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$0B,$3B,$2E,$2A
-	db $00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00
-	db $00,$00,$00,$00,$00,$00,$00,$00,$17,$38,$3F,$32,$37,$30,$00,$3D
-	db $31,$2E,$00,$2C,$38,$37,$3D,$3B,$38,$35,$00,$2C,$3E,$3B,$3C,$38
-	db $3B,$00,$00,$00,$38,$2F,$2F,$00,$2A,$37,$2D,$00,$38,$37,$00,$3D
-	db $31,$2E,$00,$3C,$2C,$3B,$2E,$2E,$37,$29,$1E,$31,$32,$3C,$00,$00
-	db $2E,$37,$2A,$2B,$35,$2E,$3C,$00,$42,$38,$3E,$00,$3D,$38,$00,$2C
-	db $31,$2A,$37,$30,$2E,$00,$3D,$31,$2E,$00,$00,$00,$2C,$38,$37,$3D
-	db $3B,$38,$35,$00,$2C,$3E,$3B,$3C,$38,$3B,$00,$2F,$3B,$38,$36,$00
-	db $2A,$00,$39,$35,$2A,$42,$2E,$3B,$38,$2F,$2F,$00,$3C,$2C,$3B,$2E
-	db $2E,$37,$00,$3D,$38,$00,$2A,$37,$42,$00,$39,$35,$2A,$42,$2E,$3B
-	db $00,$00,$00,$00,$38,$37,$00,$3C,$2C,$3B,$2E,$2E,$37,$29,$00,$00
-	db $00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00
+	db "-AREA-                      "
+	db "Area                        "
+	db "Moving the control cursor   "
+	db "off and on the screen.This  "
+	db "enables you to change the   "
+	db "control cursor from a player"
+	db "off screen to any player    "
+	db "on screen.                  "
 	db $FF
 
 DATA_87CFAE:
-	db $26,$0B,$1C,$0F,$0B,$00,$0B,$26,$00,$00,$00,$00,$00,$00,$00,$00
-	db $00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$0D,$38,$37
-	db $3D,$3B,$38,$35,$35,$2E,$3B,$00,$1E,$42,$39,$2E,$00,$00,$00,$00
-	db $00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00
-	db $00,$00,$00,$00,$53,$53,$53,$19,$37,$00,$3D,$31,$2E,$00,$3C,$2C
-	db $3B,$2E,$2E,$37,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00
-	db $00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00
-	db $00,$0B,$3B,$2E,$2A,$00,$53,$53,$53,$53,$53,$53,$19,$18,$00,$00
-	db $00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$FF
+	db "-AREA A-                    "
+	db " Controller Type            "
+	db "            ",$53,$53,$53,"On the screen"
+	db "                            "
+	db " Area ",$53,$53,$53,$53,$53,$53,"ON              "
+	db $FF
 
 DATA_87D03B:
-	db $26,$0B,$1C,$0F,$0B,$00,$0C,$26,$00,$00,$00,$00,$00,$00,$00,$00
-	db $00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$0D,$38,$37
-	db $3D,$3B,$38,$35,$35,$2E,$3B,$00,$1E,$42,$39,$2E,$00,$00,$00,$00
-	db $00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00
-	db $00,$00,$00,$00,$53,$53,$53,$19,$37,$00,$3D,$31,$2E,$00,$3C,$2C
-	db $3B,$2E,$2E,$37,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00
-	db $00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00
-	db $00,$0B,$3B,$2E,$2A,$00,$53,$53,$53,$53,$53,$53,$19,$10,$10,$00
-	db $00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$FF
+	db "-AREA B-                    "
+	db " Controller Type            "
+	db "            ",$53,$53,$53,"On the screen"
+	db "                            "
+	db " Area ",$53,$53,$53,$53,$53,$53,"OFF             "
+	db $FF
 
 DATA_87D0C8:
-	db $26,$0B,$1C,$0F,$0B,$00,$0D,$26,$00,$00,$00,$00,$00,$00,$00,$00
-	db $00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$0D,$38,$37
-	db $3D,$3B,$38,$35,$35,$2E,$3B,$00,$1E,$42,$39,$2E,$00,$00,$00,$00
-	db $00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00
-	db $00,$00,$53,$53,$53,$1E,$31,$2E,$00,$40,$31,$38,$35,$2E,$00,$2F
-	db $32,$2E,$35,$2D,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00
-	db $00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00
-	db $00,$0B,$3B,$2E,$2A,$00,$53,$53,$53,$53,$53,$53,$00,$19,$10,$10
-	db $00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$FF
+	db "-AREA C-                    "
+	db " Controller Type            "
+	db "          ",$53,$53,$53,"The whole field"
+	db "                            "
+	db " Area ",$53,$53,$53,$53,$53,$53," OFF            "
+	db $FF
 
 DATA_87D155:
-	db $26,$0D,$3E,$3B,$3C,$38,$3B,$00,$36,$38,$3F,$2E,$36,$2E,$37,$3D
-	db $00,$3D,$42,$39,$2E,$26,$00,$00,$00,$00,$00,$00,$53,$0B,$3E,$3D
-	db $38,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00
-	db $00,$00,$00,$00,$00,$00,$00,$00,$17,$38,$3F,$2E,$3C,$00,$3D,$31
-	db $2E,$00,$2C,$38,$37,$3D,$3B,$38,$35,$00,$2C,$3E,$3B,$3C,$38,$3B
-	db $00,$00,$00,$00,$2A,$3E,$3D,$38,$36,$2A,$3D,$32,$2C,$2A,$35,$35
-	db $42,$00,$3D,$38,$00,$3D,$31,$2E,$00,$39,$35,$2A,$42,$2E,$3B,$00
-	db $32,$37,$00,$3D,$31,$2E,$00,$2B,$2E,$3C,$3D,$00,$39,$38,$3C,$32
-	db $3D,$32,$38,$37,$29,$00,$00,$00,$00,$00,$00,$00,$FF
+	db "-Cursor movement type-      "
+	db $53,"Auto                       "
+	db "Moves the control cursor    "
+	db "automatically to the player "
+	db "in the best position.       "
+	db $FF
 
 DATA_87D1E2:
-	db $26,$0D,$3E,$3B,$3C,$38,$3B,$00,$36,$38,$3F,$2E,$36,$2E,$37,$3D
-	db $00,$3D,$42,$39,$2E,$26,$00,$00,$00,$00,$00,$00,$53,$17,$2A,$37
-	db $3E,$2A,$35,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00
-	db $00,$00,$00,$00,$00,$00,$00,$00,$0F,$37,$2A,$2B,$35,$2E,$3C,$00
-	db $42,$38,$3E,$00,$3D,$38,$00,$36,$38,$3F,$2E,$00,$3D,$31,$2E,$00
-	db $00,$00,$00,$00,$2C,$3E,$3B,$3C,$38,$3B,$00,$2B,$42,$00,$42,$38
-	db $3E,$3B,$3C,$2E,$35,$2F,$29,$00,$00,$00,$00,$00,$00,$00,$00,$00
+	db "-Cursor movement type-      "
+	db $53,"Manual                     "
+	db "Enables you to move the     "
+	db "cursor by yourself.         "
 	db $FF
 
 DATA_87D253:
-	db $26,$1D,$2E,$35,$2E,$2C,$3D,$32,$37,$30,$00,$3D,$31,$2E,$00,$11
-	db $38,$2A,$35,$34,$2E,$2E,$39,$2E,$3B,$26,$00,$00,$1A,$3B,$2E,$3C
-	db $3C,$00,$3D,$31,$2E,$00,$1C,$00,$2A,$37,$2D,$00,$16,$00,$2B,$3E
-	db $3D,$3D,$38,$37,$00,$00,$00,$00,$3C,$32,$36,$3E,$35,$3D,$2A,$37
-	db $2E,$38,$3E,$3C,$35,$42,$00,$3D,$38,$00,$3D,$2A,$34,$2E,$00,$00
-	db $00,$00,$00,$00,$32,$36,$36,$2E,$2D,$32,$2A,$3D,$2E,$00,$36,$2A
-	db $37,$3E,$2A,$35,$00,$2C,$38,$37,$3D,$3B,$38,$35,$00,$38,$2F,$00
-	db $3D,$31,$2E,$00,$11,$38,$2A,$35,$34,$2E,$2E,$39,$2E,$3B,$29,$00
-	db $00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$FF
+	db "-Selecting the Goalkeeper-  "
+	db "Press the R and L button    "
+	db "simultaneously to take      "
+	db "immediate manual control of "
+	db "the Goalkeeper.             "
+	db $FF
 
 DATA_87D2E0:
 	dw DATA_87D2EC,DATA_87D3CC,DATA_87D4AC,DATA_87D539,DATA_87D5E2,DATA_87D6C3
 
 DATA_87D2EC:
-	db $26,$12,$32,$30,$31,$00,$2B,$2A,$35,$35,$26,$00,$00,$00,$00,$00
-	db $00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$1F,$3C,$2E,$00
-	db $2F,$38,$3B,$00,$2C,$2E,$37,$3D,$3B,$32,$37,$30,$29,$1E,$31,$2E
-	db $00,$35,$38,$37,$30,$2E,$3B,$00,$42,$38,$3E,$00,$39,$3B,$2E,$3C
-	db $3C,$52,$3D,$31,$2E,$00,$31,$32,$30,$31,$2E,$3B,$00,$3D,$31,$2E
-	db $00,$00,$00,$00,$2B,$2A,$35,$35,$00,$2F,$35,$32,$2E,$3C,$29,$00
-	db $00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00
-
+	db "-High ball-                 "
+	db "Use for centring.The longer "
+	db "you press,the higher the    "
+	db "ball flies.                 "
 DATA_87D35C:
-	db $00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00
-	db $00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00
-	db $00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00
-	db $00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00
-	db $00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00
-	db $00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00
-	db $00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00
+	db "                            "
+	db "                            "
+	db "                            "
+	db "                            "
 
 DATA_87D3CC:
-	db $26,$1A,$2A,$3C,$3C,$26,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00
-	db $00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$1F,$3C,$2E,$00
-	db $2F,$38,$3B,$00,$2A,$00,$3C,$31,$38,$3B,$3D,$00,$39,$2A,$3C,$3C
-	db $29,$1E,$38,$00,$00,$00,$00,$00,$36,$2A,$34,$2E,$00,$3D,$31,$2E
-	db $00,$39,$35,$2A,$42,$2E,$3B,$00,$35,$32,$2F,$3D,$00,$3D,$31,$2E
-	db $00,$00,$00,$00,$2B,$2A,$35,$35,$00,$33,$3E,$3C,$3D,$00,$39,$3B
-	db $2E,$3C,$3C,$00,$3D,$31,$2E,$00,$2B,$3E,$3D,$3D,$38,$37,$00,$00
-	db $40,$32,$3D,$31,$38,$3E,$3D,$00,$39,$3B,$2E,$3C,$3C,$32,$37,$30
-	db $00,$32,$37,$00,$2A,$37,$42,$00,$00,$00,$00,$00,$2D,$32,$3B,$2E
-	db $2C,$3D,$32,$38,$37,$00,$38,$37,$00,$3D,$31,$2E,$00,$0E,$26,$1A
-	db $2A,$2D,$29,$1E,$31,$32,$3C,$00,$40,$32,$35,$35,$00,$2E,$37,$2A
-	db $2B,$35,$2E,$00,$42,$38,$3E,$00,$3D,$38,$00,$31,$2E,$2A,$2D,$00
-	db $38,$3B,$00,$00,$2A,$3D,$3D,$2E,$36,$39,$3D,$00,$2A,$37,$00,$38
-	db $3F,$2E,$3B,$31,$2E,$2A,$2D,$00,$34,$32,$2C,$34,$29,$00,$00,$00
+	db "-Pass-                      "
+	db "Use for a short pass.To     "
+	db "make the player lift the    "
+	db "ball just press the button  "
+	db "without pressing in any     "
+	db "direction on the D-Pad.This "
+	db "will enable you to head or  "
+	db "attempt an overhead kick.   "
 
 DATA_87D4AC:
-	db $26,$1D,$31,$38,$38,$3D,$26,$00,$00,$00,$00,$00,$00,$00,$00,$00
-	db $00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$1A,$3B,$2E,$3C
-	db $3C,$00,$3D,$31,$32,$3C,$00,$2B,$3E,$3D,$3D,$38,$37,$00,$40,$31
-	db $32,$35,$2E,$00,$32,$37,$00,$00,$42,$38,$3E,$3B,$00,$38,$39,$39
-	db $38,$37,$2E,$37,$3D,$50,$3C,$00,$31,$2A,$35,$2F,$29,$1E,$31,$2E
-	db $00,$00,$00,$00,$35,$38,$37,$30,$2E,$3B,$00,$42,$38,$3E,$00,$39
-	db $3B,$2E,$3C,$3C,$00,$3D,$31,$2E,$00,$2B,$3E,$3D,$3D,$38,$37,$00
-	db $3D,$31,$2E,$00,$31,$32,$30,$31,$2E,$3B,$00,$3D,$31,$2E,$00,$3C
-	db $31,$38,$3D,$29,$00,$00,$00,$00,$00,$00,$00,$00,$FF
+	db "-Shoot-                     "
+	db "Press this button while in  "
+	db "your opponent's half.The    "
+	db "longer you press the button "
+	db "the higher the shot.        "
+	db $FF
 
 DATA_87D539:
-	db $26,$0E,$2A,$3C,$31,$26,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00
-	db $00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$21,$31,$32,$35
-	db $2E,$00,$42,$38,$3E,$00,$31,$38,$35,$2D,$00,$3D,$31,$32,$3C,$00
-	db $2B,$3E,$3D,$3D,$38,$37,$00,$00,$2D,$38,$40,$37,$00,$3D,$31,$2E
-	db $00,$39,$35,$2A,$42,$2E,$3B,$00,$40,$32,$35,$35,$00,$3C,$39,$3B
-	db $32,$37,$3D,$29,$0C,$2E,$00,$2C,$2A,$3B,$2E,$2F,$3E,$35,$00,$37
-	db $38,$3D,$00,$3D,$38,$00,$3E,$3C,$2E,$00,$32,$3D,$00,$3D,$38,$38
-	db $36,$3E,$2C,$31,$00,$38,$3B,$00,$3D,$31,$2E,$00,$39,$35,$2A,$42
-	db $2E,$3B,$00,$40,$32,$35,$35,$00,$3B,$3E,$37,$00,$38,$3E,$3D,$00
-	db $38,$2F,$00,$3C,$3D,$2A,$36,$32,$37,$2A,$29,$00,$00,$00,$00,$00
-	db $00,$00,$00,$00,$00,$00,$00,$00,$FF
+	db "-Dash-                      "
+	db "While you hold this button  "
+	db "down the player will sprint."
+	db "Be careful not to use it too"
+	db "much or the player will run "
+	db "out of stamina.             "
+	db $FF
 
 DATA_87D5E2:
-	db $26,$11,$38,$2A,$35,$00,$15,$2E,$2E,$39,$2E,$3B,$26,$00,$00,$00
-	db $00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$21,$31,$2E,$37
-	db $00,$32,$37,$00,$17,$2A,$37,$3E,$2A,$35,$00,$38,$3B,$00,$1D,$2E
-	db $36,$32,$26,$0B,$3E,$3D,$38,$00,$36,$38,$2D,$2E,$52,$39,$3B,$2E
-	db $3C,$3C,$00,$3D,$31,$2E,$00,$0B,$00,$2B,$3E,$3D,$3D,$38,$37,$00
-	db $3D,$38,$00,$00,$33,$3E,$36,$39,$00,$31,$32,$30,$31,$00,$2A,$37
-	db $2D,$00,$3D,$31,$2E,$00,$0C,$00,$2B,$3E,$3D,$3D,$38,$37,$00,$00
-	db $3D,$38,$00,$2D,$32,$3F,$2E,$00,$35,$38,$40,$29,$1E,$31,$2E,$00
-	db $2C,$38,$36,$39,$3E,$3D,$2E,$3B,$00,$00,$00,$00,$40,$32,$35,$35
-	db $00,$2D,$2E,$2C,$32,$2D,$2E,$00,$40,$31,$2E,$3D,$31,$2E,$3B,$00
-	db $3D,$38,$00,$39,$3E,$37,$2C,$31,$38,$3B,$00,$2C,$2A,$3D,$2C,$31
-	db $00,$3D,$31,$2E,$00,$2B,$2A,$35,$35,$00,$40,$31,$2E,$37,$00,$42
-	db $38,$3E,$00,$00,$39,$3B,$2E,$3C,$3C,$00,$3D,$31,$2E,$00,$22,$00
-	db $2B,$3E,$3D,$3D,$38,$37,$29,$00,$00,$00,$00,$00,$00,$00,$00,$00
+	db "-Goal Keeper-               "
+	db "When in Manual or Semi-Auto "
+	db "mode,press the A button to  "
+	db "jump high and the B button  "
+	db "to dive low.The computer    "
+	db "will decide whether to punch"
+	db "or catch the ball when you  "
+	db "press the X button.         "
 	db $FF
 
 DATA_87D6C3:
-	db $26,$0D,$38,$37,$3D,$3B,$38,$35,$35,$2E,$3B,$00,$19,$39,$2E,$3B
-	db $2A,$3D,$32,$38,$37,$3C,$26,$00,$00,$00,$00,$00,$1E,$3E,$3B,$37
-	db $00,$3D,$31,$2E,$00,$39,$2A,$30,$2E,$3C,$00,$2B,$42,$00,$39,$3B
-	db $2E,$3C,$3C,$32,$37,$30,$00,$00,$3D,$31,$2E,$00,$16,$51,$1C,$00
-	db $2B,$3E,$3D,$3D,$38,$37,$3C,$29,$00,$00,$00,$00,$00,$00,$00,$00
-	db $00,$00,$00,$00,$FF,$72,$73,$74,$75,$76,$77,$78,$00,$00,$00,$79
-	db $7A,$7B,$7C,$00,$7D,$7E,$7F,$80,$00,$82,$83,$84,$85,$86,$87,$88
-	db $89,$8A,$8B,$8C,$8D,$8E,$8F
+	db "-Controller Operations-     "
+	db "Turn the pages by pressing  "
+	db "the L/R buttons.            "
+	db $FF
+
+cleartable
+table "tables/fonts/TallMenuText.txt"
+
+UNK_87D618:
+	db $72,$73,$74,$75,$76,$77,$78,$00,$00,$00,$79,$7A,$7B,$7C,$00,$7D
+	db $7E,$7F,$80,$00,$82,$83,$84,$85,$86,$87,$88,$89,$8A,$8B,$8C,$8D
+	db $8E,$8F
 
 DATA_87D73A:
-	db $FD,$20,$6B,$76,$75,$5A,$7B,$00,$6E,$70,$7D,$6C,$00,$7C,$77,$52
-	db $00,$57,$00,$6E,$68,$74,$6C,$00,$76,$7D,$6C,$79,$00,$57,$00,$00
+	db $FD : db $20
+	db "DON'T GIVE UP! - GAME OVER -  "
 
 DATA_87D75A:
-	db $FD,$20,$77,$73,$68,$80,$6C,$79,$00,$00,$7E,$70,$75,$7A,$52
+	db $FD : db $20
+	db "PLAYER  WINS!"
 
 DATA_87D769:
-	db $FD,$20,$6A,$76,$75,$6E,$79,$68,$7B,$7C,$73,$68,$7B,$70,$76,$75
-	db $7A,$52
+	db $FD : db $20
+	db "CONGRATULATIONS!"
 
 DATA_87D77B:
-	db $FD,$28,$72,$73,$74,$74,$75,$00,$7E,$7F,$80,$76,$81,$82
+	db $FD : db $28
+	db $72,$73,$74,$74,$75,$00,$7E,$7F,$80,$76,$81,$82
 
 DATA_87D789:
-	db $FD,$28,$76,$77,$77,$00,$78,$7A,$7B,$7C,$7D,$83,$00,$78,$84,$83
+	db $FD : db $28
+	db $76,$77,$77,$00,$78,$7A,$7B,$7C,$7D,$83,$00,$78,$84,$83
 	db $84,$78,$85,$84,$79,$86
 
 DATA_87D79F:
-	db $5F
+	db "1"
 
 DATA_87D7A0:
-	db $60
+	db "2"
 
 DATA_87D7A1:
-	db $61
+	db "3"
 
 DATA_87D7A2:
-	db $62
+	db "4"
 
 DATA_87D7A3:
-	db $63
+	db "5"
 
 DATA_87D7A4:
-	db $64
+	db "6"
 
 DATA_87D7A5:
-	db $65
+	db "7"
 
 DATA_87D7A6:
-	db $66
+	db "8"
 
 DATA_87D7A7:
-	db $76,$75,$6C
+	db "ONE"
 
 DATA_87D7AA:
-	db $7B,$7E,$76
+	db "TWO"
 
 DATA_87D7AD:
-	db $7B,$6F,$79,$6C,$6C
+	db "THREE"
 
 DATA_87D7B2:
-	db $6D,$76,$7C,$79
+	db "FOUR"
 
 DATA_87D7B6:
-	db $6D,$70,$7D,$6C
+	db "FIVE"
 
 DATA_87D7BA:
-	db $7A,$70,$7F
+	db "SIX"
 
 DATA_87D7BD:
-	db $7A,$6C,$7D,$6C,$75
+	db "SEVEN"
 
 DATA_87D7C2:
-	db $6C,$70,$6E,$6F,$7B
+	db "EIGHT"
 
 DATA_87D7C7:
-	db $75,$6C,$7F,$7B,$00,$6E,$68,$74,$6C,$00,$00,$00,$00,$7D,$7A
+	db "NEXT GAME    VS"
 
 DATA_87D7D6:
 	db $57,$FB,$09,$57
@@ -104776,36 +105149,41 @@ DATA_87D868:
 	dw DATA_87D870,DATA_87D878,DATA_87D880,DATA_87D888
 
 DATA_87D870:
-	db $FD,$38,$60,$61,$62,$63,$64,$65
+	db $FD : db $38
+	db $60,$61,$62,$63,$64,$65
 
 DATA_87D878:
-	db $FD,$34,$66,$67,$68,$69,$6A,$6B
+	db $FD : db $34
+	db $66,$67,$68,$69,$6A,$6B
 
 DATA_87D880:
-	db $FD,$30,$6C,$6D,$6E,$6F,$70,$71
+	db $FD : db $30
+	db $6C,$6D,$6E,$6F,$70,$71
 
 DATA_87D888:
-	db $FD,$30,$72,$72,$72,$72,$72,$72
+	db $FD : db $30
+	db $72,$72,$72,$72,$72,$72
 
 UNK_87D890:
 	db $FE,$7E
 
 DATA_87D892:
-	db $73,$6C,$68,$6E,$7C,$6C,$00,$7A,$7B,$68,$75,$6B,$70,$75,$6E,$7A
+	db "LEAGUE STANDINGS"
 
 DATA_87D8A2:
-	db $73,$6C,$68,$6E,$7C,$6C,$00,$77,$76,$70,$75,$7B,$7A,$00,$7B,$68
-	db $69,$73,$6C,$FE,$C8,$FE,$AB,$27,$2E,$07,$2E,$31,$11,$EC,$21,$3C
-	db $EC,$10
+	db "LEAGUE POINTS TABLE"
+	db $FE,$C8,$FE,$AB,$27,$2E,$07,$2E,$31,$11,$EC,$21,$3C,$EC,$10
 
 DATA_87D8C4:
-	db $7B,$76,$7C,$79,$75,$68,$74,$6C,$75,$7B,$00,$7B,$68,$69,$73,$6C
+	db "TOURNAMENT TABLE"
 
 DATA_87D8D4:
-	db $FD,$28,$9B,$9C,$9D,$9E,$9F,$A0
+	db $FD : db $28
+	db $9B,$9C,$9D,$9E,$9F,$A0
 
 DATA_87D8DC:
-	db $FD,$2C,$A1,$A2,$A3,$A4,$A5,$A6,$FE,$C3,$FE,$9A,$FE,$EF,$FE,$F1
+	db $FD : db $2C
+	db $A1,$A2,$A3,$A4,$A5,$A6,$FE,$C3,$FE,$9A,$FE,$EF,$FE,$F1
 
 DATA_87D8EC:
 	db $72,$74,$76,$78,$7A,$7C,$7E,$00,$00,$00,$8A,$8C,$8E,$90,$00,$00
@@ -104813,11 +105191,10 @@ DATA_87D8EC:
 	db $00,$00,$8B,$8D,$8F,$91,$00,$00,$00,$00,$00,$00,$00,$97,$99,$9B
 
 DATA_87D91C:
-	db $57,$7B,$76,$6B,$68,$80,$5A,$7A,$00,$6E,$68,$74,$6C,$57
+	db "-TODAY'S GAME-"
 
 DATA_87D92A:
-	db $57,$7B,$76,$6B,$68,$80,$5A,$7A,$00,$6E,$68,$74,$6C,$00,$00,$79
-	db $6C,$7A,$7C,$73,$7B,$57
+	db "-TODAY'S GAME  RESULT-"
 
 DATA_87D940:
 	db $7D,$7A,$7D,$7A,$7D,$7A,$7D,$7A
@@ -104877,107 +105254,113 @@ DATA_87D9F7:
 	db $00,$D1,$D3,$00,$D5,$D7
 
 DATA_87DA0D:
-	db $76,$77,$6C,$75,$00,$6E,$68,$74,$6C,$00,$00,$00,$00,$00,$00,$00
-	db $7A,$6F,$76,$79,$7B,$00,$73,$6C,$68,$6E,$7C,$6C,$00,$00,$00,$00
-	db $7A,$6F,$76,$79,$7B,$00,$7B,$76,$7C,$79,$75,$68,$74,$6C,$75,$7B
+	db "OPEN GAME       "
+	db "SHORT LEAGUE    "
+	db "SHORT TOURNAMENT"
 
 DATA_87DA3D:
-	db $7A,$8A,$8F,$88,$8D,$86,$00,$88,$82,$8E,$86,$00,$90,$8F,$8D,$9A
-	db $54
+	db "Single game only."
 
 DATA_87DA4E:
-	db $73,$86,$82,$88,$96,$86,$00,$96,$91,$00,$95,$90,$00,$94,$8A,$99
-	db $00,$91,$8D,$82,$9A,$86,$93,$94,$54,$00,$00,$00,$00,$00,$00,$00
-	db $00,$00
+	db "League up to six players.         "
 
 DATA_87DA70:
-	db $7B,$90,$96,$93,$8F,$82,$8E,$86,$8F,$95,$00,$96,$91,$00,$95,$90
-	db $00,$86,$8A,$88,$89,$95,$00,$91,$8D,$82,$9A,$86,$93,$94,$54,$00
-	db $00,$00
+	db "Tournament up to eight players.   "
 
 DATA_87DA92:
-	db $FD,$28,$80,$81,$82,$83,$84,$85
+	db $FD : db $28
+	db $80,$81,$82,$83,$84,$85
 
 DATA_87DA9A:
-	db $FD,$2C,$86,$87,$88,$89,$8A,$8B
+	db $FD : db $2C
+	db $86,$87,$88,$89,$8A,$8B
+
+cleartable
+table "tables/fonts/SmallMenuText.txt"
 
 DATA_87DAA2:
-	db $1A,$35,$2E,$2A,$3C,$2E,$00,$00,$00,$00,$00,$00,$00,$3C,$2E,$35
-	db $2E,$2C,$3D,$00,$00,$00,$00,$00,$00,$3D,$31,$2E,$00,$38,$3B,$2D
-	db $2E,$3B,$29,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00
+	db "Please       select      the order.             "
 
 DATA_87DAD2:
-	db $1A,$35,$2E,$2A,$3C,$2E,$00,$00,$00,$00,$00,$00,$00,$3C,$2E,$35
-	db $2E,$2C,$3D,$00,$00,$00,$00,$00,$00,$3D,$31,$2E,$00,$34,$32,$2C
-	db $34,$2E,$3B,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00
+	db "Please       select      the kicker             "
+
+cleartable
+table "tables/fonts/TallMenuText.txt"
 
 DATA_87DB02:
-	db $76,$54,$72,$54,$5D,$00,$00,$00,$00,$00,$00,$00,$00,$68,$54,$80
-	db $6C,$7A,$59,$69,$54,$75,$76,$00,$FD,$28,$74,$75,$FD,$68,$74,$75
-	db $FD,$2C,$72,$73,$FD,$6C,$72,$73
+	db "O.K.?        A",$54,"YES/B",$54,"NO "
+	db $FD : db $28
+	db $74,$75
+	db $FD : db $68
+	db $74,$75
+	db $FD : db $2C
+	db $72,$73
+	db $FD : db $6C
+	db $72,$73
 
 DATA_87DB2A:
-	db $FD,$38,$2C,$2D,$2D,$2D,$2D,$2D,$2D,$2D,$2D,$2D,$2D,$FF,$28,$95
+	db $FD : db $38
+	db $2C,$2D,$2D,$2D,$2D,$2D,$2D,$2D,$2D,$2D,$2D,$FF,$28,$95
 	db $97,$96,$98
 
 DATA_87DB3D:
-	db $FD,$2C,$52
+	db $FD : db $2C
+	db "!"
 
 DATA_87DB40:
-	db $FD,$28,$70,$75,$7B,$6C,$79,$75,$68,$7B,$70,$76,$75,$68,$73,$00
-	db $00,$6A,$7C,$77
+	db $FD : db $28
+	db "INTERNATIONAL  CUP"
 
 DATA_87DB54:
-	db $FD,$28,$7B,$6F,$6C,$00,$7E,$76,$79,$73,$6B,$00,$7A,$6C,$79,$70
-	db $6C,$7A,$00,$00
+	db $FD : db $28
+	db "THE WORLD SERIES  "
 
 DATA_87DB68:
-	db $FD,$28,$00,$00,$7B,$6F,$6C,$00,$7E,$76,$79,$73,$6B,$00,$7A,$6C
-	db $79,$70,$6C,$7A,$00,$00,$68,$75,$6B,$00,$7B,$6F,$6C,$00,$6A,$6F
-	db $68,$74,$77,$70,$76,$75,$7A,$6F,$70,$77
+	db $FD : db $28
+	db "  THE WORLD SERIES  "
+	db "AND THE CHAMPIONSHIP"
 
 DATA_87DB92:
-	db $FD,$28,$7B,$6F,$6C,$00,$7E,$76,$79,$73,$6B,$00,$7A,$6C,$79,$70
-	db $6C,$7A,$00,$00,$68,$75,$6B,$00,$7A,$77,$6C,$6A,$70,$68,$73,$00
-	db $6E,$68,$74,$6C,$00,$00
+	db $FD : db $28
+	db "THE WORLD SERIES  "
+	db "AND SPECIAL GAME  "
 
 DATA_87DBB8:
-	db $FD,$2C,$68,$8A,$8E,$00,$87,$90,$93,$00,$95,$89,$86,$00,$8F,$86
-	db $99,$95,$8D,$86,$97,$86,$8D,$52,$00,$00,$00,$00,$00,$00,$00,$00
-	db $00,$00
+	db $FD : db $2C
+	db "Aim for the next"
+	db "level!          "
 
 DATA_87DBDA:
-	db $FD,$2C,$75,$90,$98,$00,$84,$89,$82,$8D,$8D,$86,$8F,$88,$86,$00
-	db $95,$89,$86,$98,$90,$93,$8D,$85,$52,$00,$00,$00,$00,$00,$00,$00
-	db $00,$00,$00,$00
+	db $FD : db $2C
+	db "Now challenge the"
+	db "world!           "
 
 DATA_87DBFE:
-	db $FD,$2C,$73,$86,$95,$5A,$94,$00,$95,$93,$9A,$00,$95,$89,$86,$00
-	db $94,$91,$86,$57,$84,$8A,$82,$8D,$00,$88,$82,$8E,$86,$52,$00,$00
-	db $00,$00,$00,$00,$00,$00
+	db $FD : db $2C
+	db "Let's try the spe-"
+	db "cial game!        "
 
 DATA_87DC24:
-	db $FD,$2C,$75,$90,$98,$00,$95,$93,$9A,$00,$95,$90,$00,$98,$8A,$8F
-	db $00,$95,$89,$86,$87,$8A,$93,$94,$95,$00,$94,$86,$82,$94,$90,$8F
-	db $00,$95,$90,$90,$52,$00
+	db $FD : db $2C
+	db "Now try to win the"
+	db "first season too! "
 
 DATA_87DC4A:
-	db $FD,$2C,$6A,$90,$8F,$88,$93,$82,$95,$96,$8D,$82,$95,$8A,$90,$8F
-	db $94,$00,$00,$00,$87,$90,$93,$00,$82,$00,$91,$86,$93,$87,$86,$84
-	db $95,$00,$88,$82,$8E,$86,$52,$00,$00,$00,$00,$00,$00,$00,$00,$00
-	db $00,$00,$00,$00,$00,$00,$00,$00
+	db $FD : db $2C
+	db "Congratulations   for a perfect game!                 "
 
 DATA_87DC82:
-	db $FD,$2C,$6A,$90,$8F,$88,$93,$82,$95,$96,$8D,$82,$95,$8A,$90,$8F
-	db $94,$00,$00,$00,$87,$90,$93,$00,$82,$00,$91,$86,$93,$87,$86,$84
-	db $95,$00,$98,$8A,$8F,$52,$80,$90,$96,$5A,$93,$86,$00,$95,$89,$86
-	db $00,$83,$86,$94,$95,$52,$00,$00
+	db $FD : db $2C
+	db "Congratulations   "
+	db "for a perfect win!"
+	db "You're the best!  "
 
 DATA_87DCBA:
-	db $FD,$2C,$75,$90,$98,$00,$95,$93,$9A,$00,$95,$90,$00,$98,$8A,$8F
-	db $00,$95,$89,$86,$94,$86,$84,$90,$8F,$85,$00,$94,$86,$82,$94,$90
-	db $8F,$00,$95,$90,$90,$52,$FD,$28,$A2,$01,$A2,$01,$A2,$01,$A2,$01
-	db $A2,$01
+	db $FD : db $2C
+	db "Now try to win the"
+	db "second season too!"
+	db $FD : db $28
+	db $A2,$01,$A2,$01,$A2,$01,$A2,$01,$A2,$01
 
 DATA_87DCEC:
 	dw DATA_87DCF2,DATA_87DCF6,DATA_87DCFA
@@ -105008,28 +105391,29 @@ DATA_87DD45:
 	db $4F,$4B,$25,$54,$4C,$27,$5B,$5C,$4D,$4E,$5D,$5E,$5F,$60,$61,$62
 
 DATA_87DD85:
-	db $FD,$2C,$72
+	db $FD : db $2C
+	db "K"
 
 DATA_87DD88:
-	db $00
+	db " "
 
 DATA_87DD89:
-	db $6D,$76,$7C,$73
+	db "FOUL"
 
 DATA_87DD8D:
-	db $80,$6C,$73,$73,$76,$7E,$00,$6A,$68,$79,$6B
+	db "YELLOW CARD"
 
 DATA_87DD98:
-	db $76,$6D,$6D,$00,$7A,$70,$6B,$6C
+	db "OFF SIDE"
 
 DATA_87DDA0:
-	db $7D,$57,$6E,$76,$68,$73
+	db "V-GOAL"
 
 DATA_87DDA6:
-	db $76,$7D,$6C,$79,$00,$7B,$70,$74,$6C
+	db "OVER TIME"
 
 DATA_87DDAF:
-	db $76,$75,$00,$00,$76,$6D,$6D
+	db "ON  OFF"
 
 DATA_87DDB6:
 	db $72,$73,$74,$75,$76,$00,$00,$77,$78,$79,$7A,$7B,$00,$00,$7C,$7D
@@ -105038,85 +105422,88 @@ DATA_87DDB6:
 	db $B0,$B1
 
 DATA_87DDE8:
-	db $6E,$68,$74,$6C,$00,$73,$6C,$7D,$6C,$73
+	db "GAME LEVEL"
 
 DATA_87DDF2:
-	db $6E,$68,$74,$6C,$00,$7B,$70,$74,$6C,$FE,$E1,$FE,$CA,$0E,$2A,$08
-	db $14
+	db "GAME TIME"
+	db $FE,$E1,$FE,$CA,$0E,$2A,$08,$14
 
 DATA_87DE03:
-	db $7A,$76,$7C,$75,$6B
+	db "SOUND"
 
 DATA_87DE08:
-	db $7A,$7B,$6C,$79,$6C,$76
+	db "STEREO"
 
 DATA_87DE0E:
-	db $74,$76,$75,$76
+	db "MONO"
 
 DATA_87DE12:
-	db $79,$7C,$73,$6C,$7A,$FE,$D1,$FE,$9D,$FE,$6C,$04,$3C,$4A,$4E,$14
+	db "RULES"
+	db $FE,$D1,$FE,$9D,$FE,$6C,$04,$3C,$4A,$4E,$14
 
 DATA_87DE22:
-	db $5F,$00,$00,$60,$00,$00,$61,$00,$00,$62,$00,$00,$63
+	db "1  2  3  4  5"
 
 DATA_87DE2F:
-	db $61,$00,$00,$00,$00,$00,$63,$00,$00,$00,$00,$00,$65,$FE,$E1,$FE
-	db $CA,$9C,$C3,$FE,$E1,$FE,$CA,$B0,$A7,$76,$75,$00,$00,$76,$6D,$6D
-	db $1C,$49,$EC,$29,$02,$04,$2B,$EC,$06,$EC,$3D,$05,$1C,$0B,$02,$3D
-	db $7D,$00,$33,$EC,$29,$FE,$8A,$FE,$85,$FE,$E5,$00,$00,$00,$00,$00
-	db $00,$00,$00,$00
+	db "3     5     7"
+	db $FE,$E1,$FE,$CA,$9C,$C3,$FE,$E1,$FE,$CA,$B0,$A7,$76,$75,$00,$00
+	db $76,$6D,$6D,$1C,$49,$EC,$29,$02,$04,$2B,$EC,$06,$EC,$3D,$05,$1C
+	db $0B,$02,$3D,$7D,$00,$33,$EC,$29,$FE,$8A,$FE,$85,$FE,$E5,$00,$00
+	db $00,$00,$00,$00,$00,$00,$00
 
 DATA_87DE73:
 	dw DATA_87DE89,DATA_87DEE1
 
 DATA_87DE77:
-	db $7B,$79,$68,$70,$75,$70,$75,$6E,$00
+	db "TRAINING "
 
 DATA_87DE80:
-	db $6A,$6F,$68,$73,$73,$6C,$75,$6E,$6C
+	db "CHALLENGE"
+
+cleartable
+table "tables/fonts/SmallMenuText.txt"
 
 DATA_87DE89:
-	db $1E,$31,$32,$3C,$00,$35,$2E,$3D,$3C,$00,$42,$38,$3E,$00,$39,$3B
-	db $2A,$2C,$3D,$32,$2C,$2E,$3D,$31,$2E,$00,$2B,$2A,$3C,$32,$2C,$00
-	db $36,$38,$3F,$2E,$36,$2E,$37,$3D,$3C,$00,$00,$00,$37,$2E,$2E,$2D
-	db $2E,$2D,$00,$3D,$38,$00,$2B,$2E,$00,$3C,$3E,$2C,$2C,$2E,$3C,$3C
-	db $26,$00,$2F,$3E,$35,$00,$32,$37,$00,$3D,$31,$32,$3C,$00,$30,$2A
-	db $36,$2E,$29,$00,$00,$00,$00,$00
+	db "This lets you practice"
+	db "the basic movements   "
+	db "needed to be success- "
+	db "ful in this game.     "
 
 DATA_87DEE1:
-	db $1E,$3B,$42,$00,$3D,$38,$00,$3C,$2E,$3D,$00,$2A,$00,$37,$2E,$40
-	db $00,$3B,$2E,$2C,$26,$00,$38,$3B,$2D,$00,$2A,$3C,$00,$42,$38,$3E
-	db $50,$35,$35,$00,$2B,$2E,$00,$2C,$38,$36,$26,$00,$39,$2E,$3D,$32
-	db $37,$30,$00,$2A,$30,$2A,$32,$37,$3C,$3D,$00,$3D,$31,$2E,$00,$00
-	db $00,$00,$2C,$35,$38,$2C,$34,$29,$00,$00,$00,$00,$00,$00,$00,$00
-	db $00,$00,$00,$00,$00,$00,$00,$00
+	db "Try to set a new rec- "
+	db "ord as you'll be com- "
+	db "peting against the    "
+	db "clock.                "
+
+cleartable
+table "tables/fonts/TallMenuText.txt"
 
 DATA_87DF39:
-	db $6D,$79,$6C,$6C
+	db "FREE"
 
 DATA_87DF3D:
-	db $6B,$6C,$6D,$6C,$75,$7A,$6C
+	db "DEFENSE"
 
 DATA_87DF44:
 	db $7A,$7C,$7E,$80,$82,$84,$00,$7B,$7D,$7F,$81,$83,$85,$00
 
 DATA_87DF52:
-	db $6D,$79,$6C,$6C,$00,$72,$70,$6A,$72
+	db "FREE KICK"
 
 DATA_87DF5B:
-	db $72,$6C,$6C,$77,$6C,$79
+	db "KEEPER"
 
 DATA_87DF61:
-	db $74,$76,$6B,$6C
+	db "MODE"
 
 DATA_87DF65:
-	db $6B,$79,$70,$69,$69,$73,$6C
+	db "DRIBBLE"
 
 DATA_87DF6C:
-	db $77,$68,$7A,$7A,$00,$00,$00
+	db "PASS   "
 
 DATA_87DF73:
-	db $7A,$6F,$76,$76,$7B,$00,$00
+	db "SHOOT  "
 
 DATA_87DF7A:
 	db $72,$74,$76,$78,$80,$82,$84,$73,$75,$77,$79,$81,$83,$85
@@ -105140,10 +105527,11 @@ DATA_87DFB3:
 	db $5C,$00,$00,$5C
 
 DATA_87DFB7:
-	db $6C,$7F,$70,$7B,$00,$00,$00
+	db "EXIT   "
 
 DATA_87DFBE:
-	db $69,$6C,$7A,$7B,$00,$7A,$6A,$76,$79,$6C,$FE,$AB
+	db "BEST SCORE"
+	db $FE,$AB
 
 DATA_87DFCA:
 	dw DATA_87DF65,DATA_87DF6C,DATA_87DF73,DATA_87DF3D,DATA_87DF7A,DATA_87DF44,DATA_87DFB7
@@ -105151,133 +105539,90 @@ DATA_87DFCA:
 DATA_87DFD8:
 	dw DATA_87DFE8,DATA_87E0C8,DATA_87E1A8,DATA_87E288,DATA_87E368,DATA_87E448,DATA_87E608,DATA_87E774
 
+cleartable
+table "tables/fonts/SmallMenuText.txt"
+
 DATA_87DFE8:
-	db $0E,$3B,$32,$2B,$2B,$35,$2E,$00,$3D,$38,$00,$2A,$3F,$38,$32,$2D
-	db $00,$42,$38,$3E,$3B,$00,$00,$00,$00,$00,$00,$00,$38,$39,$39,$38
-	db $37,$2E,$37,$3D,$3C,$00,$2A,$37,$2D,$00,$2C,$2A,$39,$3D,$3E,$3B
-	db $2E,$00,$00,$00,$00,$00,$00,$00,$3D,$31,$2E,$00,$2F,$35,$2A,$30
-	db $3C,$00,$2A,$3C,$00,$3A,$3E,$32,$2C,$34,$35,$42,$00,$2A,$3C,$00
-	db $00,$00,$00,$00,$39,$38,$3C,$3C,$32,$2B,$35,$2E,$29,$1D,$31,$38
-	db $38,$3D,$00,$2A,$2F,$3D,$2E,$3B,$00,$00,$00,$00,$00,$00,$00,$00
-	db $2C,$38,$35,$35,$2E,$2C,$3D,$32,$37,$30,$00,$2A,$35,$35,$00,$3D
-	db $31,$2E,$00,$2F,$35,$2A,$30,$3C,$00,$00,$00,$00,$3C,$2C,$38,$3B
-	db $2E,$00,$2A,$37,$2D,$00,$42,$38,$3E,$00,$36,$2A,$42,$00,$30,$2E
-	db $3D,$00,$00,$00,$00,$00,$00,$00,$2A,$00,$2B,$38,$37,$3E,$3C,$27
-	db $00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00
-	db $00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00
-	db $00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00
+	db "Dribble to avoid your       "
+	db "opponents and capture       "
+	db "the flags as quickly as     "
+	db "possible.Shoot after        "
+	db "collecting all the flags    "
+	db "score and you may get       "
+	db "a bonus!                    "
+	db "                            "
 
 DATA_87E0C8:
-	db $1A,$2A,$3C,$3C,$00,$3D,$31,$2E,$00,$2B,$2A,$35,$35,$00,$2A,$3C
-	db $00,$2F,$2A,$3C,$3D,$00,$2A,$3C,$00,$00,$00,$00,$39,$38,$3C,$3C
-	db $32,$2B,$35,$2E,$00,$3D,$38,$00,$2A,$35,$35,$00,$02,$01,$00,$00
-	db $00,$00,$00,$00,$00,$00,$00,$00,$39,$35,$2A,$42,$2E,$3B,$3C,$44
-	db $37,$38,$00,$11,$38,$2A,$35,$34,$2E,$2E,$39,$2E,$3B,$45,$29,$00
-	db $00,$00,$00,$00,$18,$38,$40,$00,$3C,$31,$38,$38,$3D,$00,$3D,$31
-	db $2E,$00,$2B,$2A,$35,$35,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00
-	db $3D,$38,$00,$3B,$2E,$2C,$2E,$32,$3F,$2E,$00,$2B,$38,$37,$3E,$3C
-	db $00,$39,$38,$32,$37,$3D,$3C,$29,$00,$00,$00,$00,$00,$00,$00,$00
-	db $00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00
-	db $00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00
-	db $00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00
-	db $00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00
-	db $00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00
+	db "Pass the ball as fast as    "
+	db "possible to all 10          "
+	db "players(no Goalkeeper).     "
+	db "Now shoot the ball          "
+	db "to receive bonus points.    "
+	db "                            "
+	db "                            "
+	db "                            "
 
 DATA_87E1A8:
-	db $1D,$31,$38,$38,$3D,$00,$3D,$31,$2E,$00,$2B,$2A,$35,$35,$00,$2A
-	db $35,$38,$37,$30,$00,$2A,$00,$00,$00,$00,$00,$00,$3C,$2E,$3D,$00
-	db $39,$2A,$3D,$31,$00,$3D,$38,$00,$2A,$3F,$38,$32,$2D,$00,$3D,$31
-	db $2E,$00,$00,$00,$00,$00,$00,$00,$38,$39,$39,$38,$3C,$32,$3D,$32
-	db $38,$37,$29,$0B,$32,$36,$00,$2F,$38,$3B,$00,$3D,$31,$2E,$00,$00
-	db $00,$00,$00,$00,$2C,$38,$3B,$37,$2E,$3B,$3C,$00,$38,$2F,$00,$3D
-	db $31,$2E,$00,$37,$2E,$3D,$00,$2F,$38,$3B,$00,$00,$00,$00,$00,$00
-	db $2B,$38,$37,$3E,$3C,$00,$39,$38,$32,$37,$3D,$3C,$29,$00,$00,$00
-	db $00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00
-	db $00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00
-	db $00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00
-	db $00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00
-	db $00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00
-	db $00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00
+	db "Shoot the ball along a      "
+	db "set path to avoid the       "
+	db "opposition.Aim for the      "
+	db "corners of the net for      "
+	db "bonus points.               "
+	db "                            "
+	db "                            "
+	db "                            "
 
 DATA_87E288:
-	db $1E,$2A,$34,$2E,$00,$3D,$31,$2E,$00,$2B,$2A,$35,$35,$00,$2A,$40
-	db $2A,$42,$00,$2F,$3B,$38,$36,$00,$00,$00,$00,$00,$3D,$31,$2E,$00
-	db $2A,$3D,$3D,$2A,$2C,$34,$32,$37,$30,$00,$3D,$2E,$2A,$36,$00,$2A
-	db $3C,$00,$00,$00,$00,$00,$00,$00,$3C,$38,$38,$37,$00,$2A,$3C,$00
-	db $39,$38,$3C,$3C,$32,$2B,$35,$2E,$29,$0B,$2F,$3D,$2E,$3B,$00,$00
-	db $00,$00,$00,$00,$3C,$3D,$2E,$2A,$35,$32,$37,$30,$00,$3D,$31,$2E
-	db $00,$2B,$2A,$35,$35,$00,$2A,$32,$36,$00,$00,$00,$00,$00,$00,$00
-	db $2F,$38,$3B,$00,$2A,$00,$30,$38,$2A,$35,$00,$3D,$38,$00,$30,$2E
-	db $3D,$00,$2B,$38,$37,$3E,$3C,$00,$00,$00,$00,$00,$39,$38,$32,$37
-	db $3D,$3C,$29,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00
-	db $00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00
-	db $00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00
-	db $00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00
-	db $00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00
+	db "Take the ball away from     "
+	db "the attacking team as       "
+	db "soon as possible.After      "
+	db "stealing the ball aim       "
+	db "for a goal to get bonus     "
+	db "points.                     "
+	db "                            "
+	db "                            "
 
 DATA_87E368:
-	db $0F,$32,$3D,$31,$2E,$3B,$00,$2A,$32,$36,$00,$3C,$3D,$3B,$2A,$32
-	db $30,$31,$3D,$00,$2F,$38,$3B,$00,$00,$00,$00,$00,$3D,$31,$2E,$00
-	db $30,$38,$2A,$35,$00,$2A,$35,$38,$37,$30,$00,$2A,$00,$3C,$2E,$3D
-	db $00,$00,$00,$00,$00,$00,$00,$00,$39,$2A,$3D,$31,$00,$38,$3B,$00
-	db $38,$39,$3D,$00,$3D,$38,$00,$2C,$2E,$37,$3D,$2E,$3B,$00,$00,$00
-	db $00,$00,$00,$00,$3D,$31,$2E,$00,$2B,$2A,$35,$35,$00,$40,$31,$2E
-	db $37,$00,$3D,$2A,$34,$32,$37,$30,$00,$3D,$31,$2E,$00,$00,$00,$00
-	db $2C,$38,$3B,$37,$2E,$3B,$00,$34,$32,$2C,$34,$29,$0B,$32,$36,$00
-	db $2F,$38,$3B,$00,$3D,$31,$2E,$00,$00,$00,$00,$00,$2C,$38,$3B,$37
-	db $2E,$3B,$3C,$00,$38,$2F,$00,$3D,$31,$2E,$00,$37,$2E,$3D,$00,$3D
-	db $38,$00,$00,$00,$00,$00,$00,$00,$30,$2E,$3D,$00,$2B,$38,$37,$3E
-	db $3C,$00,$39,$38,$32,$37,$3D,$3C,$29,$00,$00,$00,$00,$00,$00,$00
-	db $00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00
-	db $00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00
+	db "Either aim straight for     "
+	db "the goal along a set        "
+	db "path or opt to center       "
+	db "the ball when taking the    "
+	db "corner kick.Aim for the     "
+	db "corners of the net to       "
+	db "get bonus points.           "
+	db "                            "
 
 DATA_87E448:
-	db $0B,$3F,$38,$32,$2D,$00,$3D,$31,$2E,$00,$40,$2A,$35,$35,$00,$2A
-	db $37,$2D,$00,$2A,$32,$36,$00,$00,$00,$00,$00,$00,$2E,$32,$3D,$31
-	db $2E,$3B,$00,$3C,$3D,$3B,$2A,$32,$30,$31,$3D,$00,$2F,$38,$3B,$00
-	db $30,$38,$2A,$35,$00,$00,$00,$00,$38,$3B,$00,$3D,$3B,$42,$00,$2A
-	db $00,$2C,$2E,$37,$3D,$2E,$3B,$29,$0B,$32,$36,$00,$2F,$38,$3B,$00
-	db $00,$00,$00,$00,$3D,$31,$2E,$00,$2C,$38,$3B,$37,$2E,$3B,$3C,$00
-	db $38,$2F,$00,$3D,$31,$2E,$00,$37,$2E,$3D,$00,$00,$00,$00,$00,$00
-	db $3D,$38,$00,$30,$2E,$3D,$00,$2B,$38,$37,$3E,$3C,$00,$39,$38,$32
-	db $37,$3D,$3C,$29,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00
-	db $00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00
-	db $00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00
-	db $00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00
-	db $00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00
-	db $00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00
+	db "Avoid the wall and aim      "
+	db "either straight for goal    "
+	db "or try a center.Aim for     "
+	db "the corners of the net      "
+	db "to get bonus points.        "
+	db "                            "
+	db "                            "
+	db "                            "
 
 DATA_87E528:
-	db $00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00
-	db $00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00
-	db $00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00
-	db $00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00
-	db $00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00
-	db $00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00
-	db $00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00
-	db $00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00
-	db $00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00
-	db $00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00
-	db $00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00
-	db $00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00
-	db $00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00
-	db $00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00
+	db "                            "
+	db "                            "
+	db "                            "
+	db "                            "
+	db "                            "
+	db "                            "
+	db "                            "
+	db "                            "
 
 DATA_87E608:
-	db $00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00
-	db $00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00
-	db $00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00
-	db $00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00
-	db $00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00
-	db $00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00
-	db $00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00
-	db $00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00
-	db $00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00
-	db $00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00
-	db $00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00
-	db $00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00
-	db $00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00
-	db $00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00
+	db "                            "
+	db "                            "
+	db "                            "
+	db "                            "
+	db "                            "
+	db "                            "
+	db "                            "
+	db "                            "
+
+UNK_87E6E8:
 	db $14,$2A,$EC,$16,$2E,$31,$23,$EC,$3D,$55,$11,$4F,$2A,$2E,$35,$23
 	db $EC,$3D,$00,$0E,$2A,$08,$14,$FE,$B1,$FE,$B2,$B1,$BE,$D8,$C3,$BA
 	db $A8,$EA,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00
@@ -105303,63 +105648,50 @@ DATA_87E800:
 	dw DATA_87E808,DATA_87E880,DATA_87E8F8,DATA_87E970
 
 DATA_87E808:
-	db $1F,$3C,$2E,$00,$3D,$31,$2E,$00,$40,$31,$38,$35,$2E,$00,$2F,$32
-	db $2E,$35,$2D,$00,$3D,$38,$00,$00,$39,$3B,$2A,$2C,$3D,$32,$2C,$2E
-	db $00,$2D,$3B,$32,$2B,$2B,$35,$32,$37,$30,$52,$00,$00,$00,$00,$00
-	db $39,$2A,$3C,$3C,$32,$37,$30,$00,$2A,$37,$2D,$00,$3C,$31,$38,$38
-	db $3D,$32,$37,$30,$29,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00
-	db $00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00
-	db $00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00
-	db $00,$00,$00,$00,$00,$00,$00,$00
+	db "Use the whole field to  "
+	db "practice dribbling,     "
+	db "passing and shooting.   "
+	db "                        "
+	db "                        "
 
 DATA_87E880:
-	db $1E,$3B,$42,$00,$3D,$38,$00,$3D,$2A,$34,$2E,$00,$3D,$31,$2E,$00
-	db $2B,$2A,$35,$35,$00,$00,$00,$00,$2A,$40,$2A,$42,$00,$2F,$3B,$38
-	db $36,$00,$3D,$31,$2E,$00,$04,$00,$00,$00,$00,$00,$00,$00,$00,$00
-	db $38,$2F,$2F,$2E,$37,$3C,$32,$3F,$2E,$00,$39,$35,$2A,$42,$2E,$3B
-	db $3C,$00,$40,$31,$38,$00,$00,$00,$2A,$3B,$2E,$00,$2A,$32,$36,$32
-	db $37,$30,$00,$2F,$38,$3B,$00,$2A,$00,$30,$38,$2A,$35,$29,$00,$00
-	db $00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00
-	db $00,$00,$00,$00,$00,$00,$00,$00
+	db "Try to take the ball    "
+	db "away from the 3         "
+	db "offensive players who   "
+	db "are aiming for a goal.  "
+	db "                        "
 
 DATA_87E8F8:
-	db $1A,$3B,$2A,$2C,$3D,$32,$2C,$2E,$00,$42,$38,$3E,$3B,$00,$2F,$3B
-	db $2E,$2E,$00,$34,$32,$2C,$34,$29,$00,$00,$00,$00,$00,$00,$00,$00
-	db $00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00
-	db $00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00
-	db $00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00
-	db $00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00
-	db $00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00
-	db $00,$00,$00,$00,$00,$00,$00,$00
+	db "Practice your free kick."
+	db "                        "
+	db "                        "
+	db "                        "
+	db "                        "
 
 DATA_87E970:
-	db $0E,$2E,$2F,$2E,$37,$2D,$00,$42,$38,$3E,$3B,$00,$30,$38,$2A,$35
-	db $52,$00,$00,$00,$00,$00,$00,$00,$2C,$38,$37,$3D,$3B,$38,$35,$00
-	db $3D,$31,$2E,$00,$15,$2E,$2E,$39,$2E,$3B,$29,$00,$00,$00,$00,$00
-	db $1E,$40,$38,$00,$38,$39,$39,$38,$3C,$32,$37,$30,$00,$39,$35,$2A
-	db $42,$2E,$3B,$3C,$00,$00,$00,$00,$40,$32,$35,$35,$00,$3D,$3B,$42
-	db $00,$3D,$38,$00,$3C,$2C,$38,$3B,$2E,$29,$00,$00,$00,$00,$00,$00
-	db $00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00
-	db $00,$00,$00,$00,$00,$00,$00,$00
+	db "Defend your goal,       "
+	db "control the Keeper.     "
+	db "Two opposing players    "
+	db "will try to score.      "
+	db "                        "
+
+cleartable
+table "tables/fonts/TallMenuText.txt"
 
 DATA_87E9E8:
-	db $57,$80,$76,$7C,$79,$00,$79,$6C,$6A,$76,$79,$6B,$57
+	db "-YOUR RECORD-"
 
 DATA_87E9F5:
-	db $7B,$70,$74,$6C,$55,$55,$55,$55,$55,$55,$55,$55,$55,$55,$00,$00
-	db $5C,$00,$00,$5C
+	db "TIME",$55,$55,$55,$55,$55,$55,$55,$55,$55,$55,"  :  :"
 
 DATA_87EA09:
-	db $7B,$70,$74,$6C,$00,$7A,$6A,$76,$79,$6C,$55,$55,$55,$55,$55,$55
-	db $55,$55,$55
+	db "TIME SCORE",$55,$55,$55,$55,$55,$55,$55,$55,$55,""
 
 DATA_87EA1C:
-	db $69,$76,$75,$7C,$7A,$00,$7B,$70,$74,$6C,$55,$55,$55,$55,$00,$00
-	db $5C,$00,$00,$5C
+	db "BONUS TIME",$55,$55,$55,$55,"  :  :"
 
 DATA_87EA30:
-	db $69,$76,$75,$7C,$7A,$00,$7A,$6A,$76,$79,$6C,$55,$55,$55,$55,$55
-	db $55,$55,$55
+	db "BONUS SCORE",$55,$55,$55,$55,$55,$55,$55,$55,""
 
 DATA_87EA43:
 	db $7B,$76,$7B,$68,$73,$00,$7A,$6A,$76,$79,$6C,$55,$55,$55,$55,$55
@@ -105370,62 +105702,70 @@ DATA_87EA43:
 DATA_87EA7E:
 	dw DATA_87EB7A,DATA_87EB2A,DATA_87EA8A,DATA_87EBCA,DATA_87EC1A,DATA_87EADA
 
+cleartable
+table "tables/fonts/SmallMenuText.txt"
+
 DATA_87EA8A:
-	db $0E,$38,$37,$50,$3D,$00,$2B,$2E,$00,$3D,$38,$38,$00,$00,$00,$00
-	db $00,$00,$00,$00,$32,$36,$39,$3B,$2E,$3C,$3C,$2E,$2D,$29,$35,$3D
-	db $50,$3C,$00,$00,$00,$00,$00,$00,$38,$37,$35,$42,$00,$2A,$37,$00
-	db $2A,$3F,$2E,$3B,$2A,$30,$2E,$00,$00,$00,$00,$00,$3B,$2E,$2C,$38
-	db $3B,$2D,$29,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00
+	db "Don't be too        "
+	db "impressed.lt's      "
+	db "only an average     "
+	db "record.             "
 
 DATA_87EADA:
-	db $11,$3B,$2E,$2A,$3D,$27,$13,$3D,$50,$3C,$00,$2A,$00,$37,$2E,$40
-	db $00,$00,$00,$00,$3B,$2E,$2C,$38,$3B,$2D,$27,$00,$00,$00,$00,$00
-	db $00,$00,$00,$00,$00,$00,$00,$00,$1F,$37,$2B,$2E,$35,$32,$2E,$3F
-	db $2A,$2B,$35,$2E,$27,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00
-	db $00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00
+	db "Great",$27,"It's a new    "
+	db "record!             "
+	db "Unbelievable!       "
+	db "                    "
 
 DATA_87EB2A:
-	db $18,$38,$3D,$00,$30,$38,$38,$2D,$00,$2E,$37,$38,$3E,$30,$31,$29
-	db $00,$00,$00,$00,$1A,$3B,$2A,$2C,$3D,$32,$2C,$2E,$00,$31,$2A,$3B
-	db $2D,$2E,$3B,$00,$00,$00,$00,$00,$37,$2E,$41,$3D,$00,$3D,$32,$36
-	db $2E,$27,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00
-	db $00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00
+	db "Not good enough.    "
+	db "Practice harder     "
+	db "next time!          "
+	db "                    "
 
 DATA_87EB7A:
-	db $1A,$35,$2E,$2A,$3C,$2E,$00,$3D,$3B,$42,$00,$31,$2A,$3B,$2D,$2E
-	db $3B,$00,$00,$00,$37,$2E,$41,$3D,$00,$3D,$32,$36,$2E,$29,$00,$00
-	db $00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00
-	db $00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00
-	db $00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00
+	db "Please try harder   "
+	db "next time.          "
+	db "                    "
+	db "                    "
 
 DATA_87EBCA:
-	db $23,$38,$3E,$00,$33,$3E,$3C,$3D,$00,$36,$32,$3C,$3C,$2E,$2D,$00
-	db $2A,$00,$00,$00,$37,$2E,$40,$00,$3B,$2E,$2C,$38,$3B,$2D,$29,$00
-	db $00,$00,$00,$00,$00,$00,$00,$00,$1E,$3B,$42,$00,$2A,$30,$2A,$32
-	db $37,$29,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00
-	db $00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00
+	db "You just missed a   "
+	db "new record.         "
+	db "Try again.          "
+	db "                    "
 
 DATA_87EC1A:
-	db $11,$38,$38,$2D,$00,$2B,$3E,$3D,$00,$3D,$3B,$42,$00,$31,$2A,$3B
-	db $2D,$2E,$3B,$00,$2F,$38,$3B,$00,$3D,$31,$2E,$00,$3B,$2E,$2C,$38
-	db $3B,$2D,$29,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00
-	db $00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00
-	db $00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00
+	db "Good but try harder "
+	db "for the record.     "
+	db "                    "
+	db "                    "
 
 DATA_87EC6A:
-	db $FD,$38,$01,$02,$02,$02,$FD,$38,$03,$04,$04,$04
+	db $FD : db $38
+	db $01,$02,$02,$02
+	db $FD : db $38
+	db $03,$04,$04,$04
+
+cleartable
+table "tables/fonts/SmallMenuText.txt"
 
 DATA_87EC76:
-	db $01,$02,$03,$04,$05,$06,$07,$08,$09,$0A,$00,$00,$00,$0B,$0C,$0D
-	db $0E,$0F,$10,$11,$12,$13,$14,$15,$16,$17,$18,$19,$1A,$1B,$1C,$1D
-	db $1E,$1F,$20,$21,$22,$23,$24,$29,$54,$26,$27,$28,$00,$00,$00,$00
-	db $00,$00,$00,$00
+	db "0123456789",$00,$00,$00
+	db "ABCDEFGHIJ"
+	db "KLMNOPQRST"
+	db "UVWXYZ.",$54,"-!"
+	db "%        "
 
 DATA_87ECAA:
-	db $FD,$3C,$30,$30,$30
+	db $FD : db $3C
+	db $30,$30,$30
+
+cleartable
+table "tables/fonts/TallMenuText.txt"
 
 DATA_87ECAF:
-	db $70,$75,$77,$7C,$7B,$00,$75,$68,$74,$6C,$00,$00
+	db "INPUT NAME  "
 
 DATA_87ECBB:
 	dw DATA_87ECCB,DATA_87ECDA,DATA_87ECE1,DATA_87ECE8,DATA_87ECEF
@@ -105498,14 +105838,13 @@ DATA_87EDB5:
 	db $B5,$D0,$BD,$A1,$C2,$00,$00,$00
 
 DATA_87EDBD:
-	db $6D,$79,$76,$74,$00,$7B,$6F,$6C,$00,$69,$70,$6E,$70,$75,$70,$75
-	db $6E
+	db "FROM THE BIGINING"
 
 DATA_87EDCE:
 	db $3C,$EC,$10,$2B,$EC,$3D,$00,$00
 
 DATA_87EDD6:
-	db $77,$68,$7A,$7A,$00,$7E,$76,$79,$6B
+	db "PASS WORD"
 
 DATA_87EDDF:
 	db $68,$B5,$9D,$59,$69,$9D,$9D,$9F
@@ -105518,271 +105857,203 @@ DATA_87EE01:
 	db $97,$99,$9B,$9D,$9F,$98,$9A,$9C,$9E,$A0
 
 DATA_87EE0B:
-	db $00,$00,$00,$00,$00,$00,$00,$00,$00,$00
+	db "          "
 
 DATA_87EE15:
-	db $75,$76,$54
+	db "NO."
 
 DATA_87EE18:
-	db $5F
+	db "1"
 
 DATA_87EE19:
-	db $60
+	db "2"
 
 DATA_87EE1A:
-	db $61
+	db "3"
 
 DATA_87EE1B:
-	db $62
+	db "4"
 
 DATA_87EE1C:
-	db $63
+	db "5"
 
 DATA_87EE1D:
-	db $64
+	db "6"
 
 DATA_87EE1E:
-	db $65
+	db "7"
 
 DATA_87EE1F:
-	db $66
+	db "8"
 
 DATA_87EE20:
-	db $67
+	db "9"
 
 DATA_87EE21:
 	dw DATA_87EE3B,DATA_87EE73,DATA_87EEAB,DATA_87EEE3,DATA_87EF1B,DATA_87EF53,DATA_87EF8B,DATA_87EFC3
 	dw DATA_87EFFB,DATA_87F033,DATA_87F06B,DATA_87F0A3,DATA_87F0DB
 
 DATA_87EE3B:
-	db $75,$76,$54,$5F,$00,$00,$70,$7B,$68,$73,$80,$00,$5F,$57,$60,$00
-	db $6A,$79,$76,$68,$7B,$70,$68,$00,$00,$00,$00,$00,$00,$00,$00,$00
-	db $00,$00,$5F,$5C,$5F,$62,$00,$70,$7B,$68,$73,$80,$5A,$7A,$00,$6A
-	db $54,$72,$54,$00,$00,$00,$00,$00
+	db "NO.1  ITALY 1-2 CROATIA     "
+	db "      1:14 ITALY'S C.K.     "
 
 DATA_87EE73:
-	db $75,$76,$54,$60,$00,$00,$6E,$6C,$79,$74,$68,$75,$80,$00,$60,$57
-	db $61,$00,$69,$7C,$73,$6E,$68,$79,$70,$68,$00,$00,$00,$00,$00,$00
-	db $00,$00,$5F,$5C,$5E,$60,$00,$6E,$6C,$79,$74,$68,$75,$80,$5A,$7A
-	db $00,$6D,$54,$72,$54,$00,$00,$00
+	db "NO.2  GERMANY 2-3 BULGARIA  "
+	db "      1:02 GERMANY'S F.K.   "
 
 DATA_87EEAB:
-	db $75,$76,$54,$61,$00,$00,$6C,$75,$6E,$73,$68,$75,$6B,$00,$5F,$57
-	db $61,$00,$69,$79,$68,$81,$70,$73,$00,$00,$00,$00,$00,$00,$00,$00
-	db $00,$00,$5F,$5C,$63,$62,$00,$6C,$75,$6E,$73,$68,$75,$6B,$5A,$7A
-	db $00,$6A,$54,$72,$54,$00,$00,$00
+	db "NO.3  ENGLAND 1-3 BRAZIL    "
+	db "      1:54 ENGLAND'S C.K.   "
 
 DATA_87EEE3:
-	db $75,$76,$54,$62,$00,$00,$6E,$6C,$79,$74,$68,$75,$80,$00,$5E,$57
-	db $5E,$00,$70,$7B,$68,$73,$80,$00,$00,$00,$00,$00,$00,$00,$00,$00
-	db $00,$00,$5E,$5C,$63,$64,$00,$6E,$6C,$79,$74,$68,$75,$80,$5A,$7A
-	db $00,$6D,$54,$72,$54,$00,$00,$00
+	db "NO.4  GERMANY 0-0 ITALY     "
+	db "      0:56 GERMANY'S F.K.   "
 
 DATA_87EF1B:
-	db $75,$76,$54,$63,$00,$00,$7B,$7C,$79,$72,$6C,$80,$00,$5F,$57,$5F
-	db $00,$7A,$7E,$6C,$6B,$6C,$75,$00,$00,$00,$00,$00,$00,$00,$00,$00
-	db $00,$00,$5E,$5C,$62,$67,$00,$7B,$7C,$79,$72,$6C,$80,$5A,$7A,$00
-	db $7B,$6F,$79,$76,$7E,$00,$70,$75
+	db "NO.5  TURKEY 1-1 SWEDEN     "
+	db "      0:49 TURKEY'S THROW IN"
 
 DATA_87EF53:
-	db $75,$76,$54,$64,$00,$00,$69,$6C,$73,$6E,$70,$7C,$74,$00,$5F,$57
-	db $5F,$00,$7A,$77,$68,$70,$75,$00,$00,$00,$00,$00,$00,$00,$00,$00
-	db $00,$00,$5E,$5C,$62,$60,$00,$69,$6C,$73,$6E,$70,$7C,$74,$5A,$7A
-	db $00,$6D,$54,$72,$54,$00,$00,$00
+	db "NO.6  BELGIUM 1-1 SPAIN     "
+	db "      0:42 BELGIUM'S F.K.   "
 
 DATA_87EF8B:
-	db $75,$76,$54,$65,$00,$00,$79,$76,$74,$68,$75,$70,$68,$00,$5E,$57
-	db $5F,$00,$77,$76,$73,$68,$75,$6B,$00,$00,$00,$00,$00,$00,$00,$00
-	db $00,$00,$5F,$5C,$62,$61,$00,$79,$76,$74,$68,$75,$70,$68,$5A,$7A
-	db $00,$6D,$54,$72,$54,$00,$00,$00
+	db "NO.7  ROMANIA 0-1 POLAND    "
+	db "      1:43 ROMANIA'S F.K.   "
 
 DATA_87EFC3:
-	db $75,$76,$54,$66,$00,$00,$7A,$6A,$76,$7B,$73,$68,$75,$6B,$00,$5E
-	db $57,$5E,$00,$79,$7C,$7A,$7A,$70,$68,$00,$00,$00,$00,$00,$00,$00
-	db $00,$00,$5F,$5C,$60,$62,$00,$7A,$6A,$76,$7B,$73,$68,$75,$6B,$5A
-	db $7A,$00,$6E,$54,$72,$54,$00,$00
+	db "NO.8  SCOTLAND 0-0 RUSSIA   "
+	db "      1:24 SCOTLAND'S G.K.  "
 
 DATA_87EFFB:
-	db $75,$76,$54,$67,$00,$00,$77,$76,$79,$7B,$7C,$6E,$68,$73,$00,$5E
-	db $57,$5F,$00,$70,$79,$6C,$73,$68,$75,$6B,$00,$00,$00,$00,$00,$00
-	db $00,$00,$5E,$5C,$61,$66,$00,$77,$76,$79,$7B,$7C,$6E,$68,$73,$5A
-	db $7A,$00,$6D,$54,$72,$54,$00,$00
+	db "NO.9  PORTUGAL 0-1 IRELAND  "
+	db "      0:38 PORTUGAL'S F.K.  "
 
 DATA_87F033:
-	db $75,$76,$54,$5F,$5E,$00,$68,$79,$6E,$6C,$75,$7B,$70,$75,$68,$00
-	db $60,$57,$60,$00,$69,$79,$68,$81,$70,$73,$00,$00,$00,$00,$00,$00
-	db $00,$00,$5E,$5C,$62,$67,$00,$68,$79,$6E,$6C,$75,$7B,$70,$75,$68
-	db $5A,$7A,$00,$6A,$54,$72,$54,$00
+	db "NO.10 ARGENTINA 2-2 BRAZIL  "
+	db "      0:49 ARGENTINA'S C.K. "
 
 DATA_87F06B:
-	db $75,$76,$54,$5F,$5F,$00,$6F,$76,$73,$73,$68,$75,$6B,$00,$5F,$57
-	db $61,$00,$6A,$81,$6C,$6A,$6F,$54,$79,$6C,$77,$54,$00,$00,$00,$00
-	db $00,$00,$5F,$5C,$61,$66,$00,$6F,$76,$73,$73,$68,$75,$6B,$5A,$7A
-	db $00,$6D,$54,$72,$54,$00,$00,$00
+	db "NO.11 HOLLAND 1-3 CZECH.REP."
+	db "      1:38 HOLLAND'S F.K.   "
 
 DATA_87F0A3:
-	db $75,$76,$54,$5F,$60,$00,$6C,$75,$6E,$73,$68,$75,$6B,$00,$5F,$57
-	db $5F,$00,$71,$68,$77,$68,$75,$00,$00,$00,$00,$00,$00,$00,$00,$00
-	db $00,$00,$5E,$5C,$5E,$60,$00,$6C,$75,$6E,$73,$68,$75,$6B,$5A,$7A
-	db $00,$6A,$54,$72,$54,$00,$00,$00
+	db "NO.12 ENGLAND 1-1 JAPAN     "
+	db "      0:02 ENGLAND'S C.K.   "
 
 DATA_87F0DB:
-	db $00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00
-	db $00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00
-	db $00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00
-	db $00,$00,$00,$00,$00,$00,$00,$00
+	db "                            "
+	db "                            "
 
 DATA_87F113:
 	dw DATA_87F12D,DATA_87F1C9,DATA_87F265,DATA_87F301,DATA_87F39D,DATA_87F439,DATA_87F4D5,DATA_87F571
 	dw DATA_87F60D,DATA_87F6A9,DATA_87F745,DATA_87F7E1,DATA_87E528
 
+cleartable
+table "tables/fonts/SmallMenuText.txt"
+
 DATA_87F12D:
-	db $13,$3D,$00,$3C,$2E,$2E,$36,$3C,$00,$35,$32,$34,$2E,$00,$2A,$00
-	db $2D,$2E,$2F,$2E,$2A,$3D,$00,$2F,$38,$3B,$13,$1E,$0B,$16,$23,$00
-	db $2A,$30,$2A,$32,$37,$3C,$3D,$00,$3D,$31,$2E,$00,$3D,$2A,$35,$2E
-	db $37,$3D,$2E,$2D,$0D,$1C,$19,$0B,$1E,$13,$0B,$29,$13,$1E,$0B,$16
-	db $23,$00,$3C,$2C,$38,$3B,$2E,$2D,$00,$2A,$00,$30,$38,$26,$2A,$35
-	db $00,$32,$37,$00,$3D,$31,$2E,$00,$3C,$2E,$2C,$38,$37,$2D,$00,$31
-	db $2A,$35,$2F,$29,$18,$38,$40,$00,$3D,$31,$2E,$42,$00,$2A,$3B,$2E
-	db $00,$3D,$3B,$42,$32,$37,$30,$00,$3D,$38,$00,$3D,$3E,$3B,$37,$00
-	db $00,$00,$3D,$31,$2E,$00,$3D,$2A,$2B,$35,$2E,$3C,$00,$2A,$3B,$38
-	db $3E,$37,$2D,$29,$00,$00,$00,$00,$00,$00,$00,$00
+	db "It seems like a defeat for"
+	db "ITALY against the talented"
+	db "CROATIA.ITALY scored a go-"
+	db "al in the second half.Now "
+	db "they are trying to turn   "
+	db "the tables around.        "
 
 DATA_87F1C9:
-	db $0B,$35,$3D,$31,$38,$3E,$30,$31,$00,$11,$0F,$1C,$17,$0B,$18,$23
-	db $00,$31,$2A,$2D,$00,$2A,$00,$03,$00,$00,$30,$38,$2A,$35,$00,$35
-	db $2E,$2A,$2D,$52,$3D,$31,$2E,$42,$00,$30,$2A,$3F,$2E,$00,$0C,$1F
-	db $16,$11,$26,$00,$0B,$1C,$13,$0B,$00,$2A,$00,$39,$2E,$37,$2A,$35
-	db $3D,$42,$52,$2A,$37,$2D,$00,$37,$38,$40,$00,$3D,$31,$26,$2E,$42
-	db $00,$2A,$3B,$2E,$00,$2B,$2E,$31,$32,$37,$2D,$00,$2B,$42,$00,$2A
-	db $00,$30,$38,$2A,$35,$29,$00,$00,$0C,$1F,$16,$11,$0B,$1C,$13,$0B
-	db $00,$32,$3C,$00,$2A,$00,$2D,$2A,$37,$30,$2E,$3B,$38,$3E,$3C,$00
-	db $00,$00,$3D,$2E,$2A,$36,$00,$3D,$38,$00,$31,$2A,$37,$2D,$35,$2E
-	db $29,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00
+	db "Although GERMANY had a 2  "
+	db "goal lead,they gave BULG- "
+	db "ARIA a penalty,and now th-"
+	db "ey are behind by a goal.  "
+	db "BULGARIA is a dangerous   "
+	db "team to handle.           "
 
 DATA_87F265:
-	db $13,$3D,$00,$32,$3C,$00,$0F,$18,$11,$16,$0B,$18,$0E,$52,$54,$3D
-	db $31,$2E,$00,$31,$38,$36,$2E,$00,$38,$2F,$2F,$38,$38,$3D,$2B,$2A
-	db $35,$35,$54,$2A,$30,$2A,$32,$37,$3C,$3D,$54,$3D,$31,$2E,$00,$2C
-	db $31,$2A,$36,$26,$39,$32,$38,$37,$3C,$54,$0C,$1C,$0B,$24,$13,$16
-	db $29,$0F,$18,$11,$16,$0B,$18,$0E,$00,$2C,$2A,$37,$00,$00,$37,$38
-	db $3D,$00,$2E,$37,$2D,$00,$3D,$31,$2E,$00,$30,$2A,$36,$2E,$00,$2A
-	db $3C,$00,$32,$3D,$00,$32,$3C,$52,$2F,$38,$3B,$00,$3D,$31,$2E,$00
-	db $3C,$2A,$34,$2E,$00,$38,$2F,$00,$3D,$31,$2E,$32,$3B,$00,$00,$00
-	db $00,$00,$39,$3B,$32,$2D,$2E,$29,$00,$00,$00,$00,$00,$00,$00,$00
-	db $00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00
+	db "It is ENGLAND,",$54,"the home of"
+	db "football",$54,"against",$54,"the cham-"
+	db "pions",$54,"BRAZIL.ENGLAND can  "
+	db "not end the game as it is,"
+	db "for the sake of their     "
+	db "pride.                    "
 
 DATA_87F301:
-	db $11,$0F,$1C,$17,$0B,$18,$23,$00,$2C,$2A,$37,$00,$37,$38,$3D,$00
-	db $3C,$2C,$38,$3B,$2E,$00,$2A,$00,$00,$00,$30,$38,$2A,$35,$00,$2A
-	db $30,$2A,$32,$37,$3C,$3D,$00,$13,$1E,$0B,$16,$23,$52,$2E,$3F,$2E
-	db $37,$00,$00,$00,$3D,$31,$38,$3E,$30,$31,$00,$3D,$31,$2E,$00,$13
-	db $1E,$0B,$16,$13,$0B,$18,$1D,$00,$2A,$3B,$2E,$00,$00,$00,$39,$35
-	db $2A,$42,$32,$37,$30,$00,$39,$38,$38,$3B,$35,$42,$29,$11,$0F,$1C
-	db $17,$0B,$18,$23,$00,$40,$2A,$26,$37,$3D,$3C,$00,$3D,$38,$00,$3D
-	db $3E,$3B,$37,$00,$3D,$31,$2E,$00,$3D,$2A,$2B,$35,$2E,$3C,$00,$00
-	db $00,$00,$40,$32,$3D,$31,$00,$3D,$31,$32,$3C,$00,$2F,$3B,$2E,$2E
-	db $00,$34,$32,$2C,$34,$29,$00,$00,$00,$00,$00,$00
+	db "GERMANY can not score a   "
+	db "goal against ITALY,even   "
+	db "though the ITALIANS are   "
+	db "playing poorly.GERMANY wa-"
+	db "nts to turn the tables    "
+	db "with this free kick.      "
 
 DATA_87F39D:
-	db $1E,$1F,$1C,$15,$0F,$23,$00,$32,$3C,$00,$2D,$38,$32,$37,$30,$00
-	db $2E,$41,$3D,$3B,$2E,$36,$2E,$35,$42,$00,$40,$2E,$35,$35,$00,$2A
-	db $30,$2A,$32,$37,$3C,$3D,$00,$1D,$21,$0F,$0E,$0F,$18,$52,$40,$31
-	db $38,$00,$00,$00,$31,$2A,$3F,$2E,$00,$2B,$2E,$2E,$37,$00,$39,$35
-	db $2A,$42,$32,$37,$30,$00,$40,$32,$3D,$31,$00,$00,$00,$00,$3D,$31
-	db $2E,$32,$3B,$00,$2B,$2E,$3C,$3D,$00,$3D,$2E,$2A,$36,$29,$19,$37
-	db $2E,$00,$36,$38,$3B,$2E,$00,$00,$30,$38,$2A,$35,$00,$2F,$38,$3B
-	db $00,$2A,$00,$31,$32,$3C,$3D,$38,$3B,$32,$2C,$2A,$35,$00,$40,$32
-	db $37,$29,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00
-	db $00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00
+	db "TURKEY is doing extremely "
+	db "well against SWEDEN,who   "
+	db "have been playing with    "
+	db "their best team.One more  "
+	db "goal for a historical win."
+	db "                          "
 
 DATA_87F439:
-	db $13,$37,$00,$3D,$31,$2E,$00,$35,$2A,$3C,$3D,$00,$30,$2A,$36,$2E
-	db $52,$40,$31,$2E,$37,$00,$3D,$31,$2E,$42,$2F,$2A,$2C,$2E,$2D,$00
-	db $2E,$2A,$2C,$31,$00,$38,$3D,$31,$2E,$3B,$52,$0C,$0F,$16,$11,$13
-	db $1F,$17,$00,$00,$40,$2E,$3B,$2E,$00,$3C,$38,$3E,$37,$2D,$35,$42
-	db $00,$2B,$2E,$2A,$3D,$2E,$37,$29,$0B,$35,$3D,$31,$26,$00,$38,$3E
-	db $30,$31,$00,$36,$2A,$37,$42,$00,$34,$2E,$42,$00,$39,$35,$2A,$42
-	db $2E,$3B,$3C,$00,$2A,$3B,$2E,$00,$38,$3E,$3D,$52,$3D,$31,$32,$3C
-	db $00,$3D,$32,$36,$2E,$00,$3D,$31,$2E,$42,$00,$40,$2A,$37,$3D,$00
-	db $3D,$38,$36,$2A,$34,$2E,$00,$32,$3D,$00,$2E,$3F,$2E,$37,$29,$00
-	db $00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00
+	db "In the last game,when they"
+	db "faced each other,BELGIUM  "
+	db "were soundly beaten.Alth- "
+	db "ough many key players are "
+	db "out,this time they want to"
+	db "make it even.             "
 
 DATA_87F4D5:
-	db $1C,$19,$17,$0B,$18,$13,$0B,$00,$32,$3C,$00,$32,$37,$00,$30,$38
-	db $38,$2D,$00,$2C,$38,$37,$2D,$32,$3D,$26,$32,$38,$37,$29,$0F,$3F
-	db $2E,$37,$00,$3D,$31,$38,$3E,$30,$31,$00,$3D,$31,$2E,$42,$00,$31
-	db $2A,$3F,$2E,$00,$35,$2E,$3D,$00,$1A,$19,$16,$0B,$18,$0E,$00,$3D
-	db $2A,$34,$2E,$00,$3D,$31,$2E,$00,$35,$2E,$2A,$2D,$52,$00,$3D,$31
-	db $2E,$3B,$2E,$00,$32,$3C,$00,$39,$35,$2E,$37,$3D,$42,$00,$38,$2F
-	db $00,$3D,$32,$36,$2E,$00,$3D,$38,$3D,$3E,$3B,$37,$00,$32,$3D,$00
-	db $2A,$3B,$38,$3E,$37,$2D,$29,$00,$00,$00,$00,$00,$00,$00,$00,$00
-	db $00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00
-	db $00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00
+	db "ROMANIA is in good condit-"
+	db "ion.Even though they have "
+	db "let POLAND take the lead, "
+	db "there is plenty of time to"
+	db "turn it around.           "
+	db "                          "
 
 DATA_87F571:
-	db $1D,$0D,$19,$1E,$16,$0B,$18,$0E,$00,$32,$3C,$00,$2E,$2A,$30,$2E
-	db $3B,$00,$2F,$38,$3B,$00,$2A,$00,$00,$00,$3D,$32,$2C,$34,$2E,$3D
-	db $00,$3D,$38,$00,$0F,$18,$11,$16,$0B,$18,$0E,$00,$2F,$38,$3B,$00
-	db $00,$00,$00,$00,$3D,$31,$2E,$00,$2F,$32,$37,$2A,$35,$3C,$29,$1E
-	db $31,$2E,$00,$36,$38,$3C,$3D,$00,$32,$36,$39,$38,$3B,$26,$3D,$2A
-	db $37,$3D,$00,$3D,$31,$32,$37,$30,$00,$3D,$38,$00,$2D,$38,$52,$32
-	db $3C,$00,$3D,$38,$00,$00,$00,$00,$2D,$2E,$2F,$2E,$2A,$3D,$00,$1C
-	db $1F,$1D,$1D,$13,$0B,$00,$3B,$32,$30,$31,$3D,$00,$37,$38,$40,$29
-	db $00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00
-	db $00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00
+	db "SCOTLAND is eager for a   "
+	db "ticket to ENGLAND for     "
+	db "the finals.The most impor-"
+	db "tant thing to do,is to    "
+	db "defeat RUSSIA right now.  "
+	db "                          "
 
 DATA_87F60D:
-	db $1A,$19,$1C,$1E,$1F,$11,$0B,$16,$00,$31,$2A,$3F,$2E,$00,$3B,$2E
-	db $30,$2A,$32,$37,$2E,$2D,$00,$00,$00,$00,$3D,$31,$2E,$32,$3B,$00
-	db $38,$35,$2D,$00,$3C,$3D,$3B,$38,$37,$30,$00,$2F,$38,$3B,$36,$29
-	db $0C,$3E,$3D,$00,$3D,$31,$2E,$42,$00,$31,$2A,$3F,$2E,$00,$33,$3E
-	db $3C,$3D,$00,$2C,$38,$37,$2C,$2E,$2D,$2E,$2D,$00,$2A,$37,$38,$40
-	db $37,$00,$30,$38,$2A,$35,$29,$0D,$38,$37,$2C,$2E,$37,$3D,$3B,$2A
-	db $3D,$2E,$00,$2A,$37,$2D,$00,$00,$42,$38,$3E,$00,$36,$2A,$42,$00
-	db $42,$2E,$3D,$00,$40,$32,$37,$29,$00,$00,$00,$00,$00,$00,$00,$00
-	db $00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00
-	db $00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00
+	db "PORTUGAL have regained    "
+	db "their old strong form.But "
+	db "they have just conceded an"
+	db "own goal.Concentrate and  "
+	db "you may yet win.          "
+	db "                          "
 
 DATA_87F6A9:
-	db $0C,$1C,$0B,$24,$13,$16,$00,$2A,$3B,$2E,$00,$3C,$3D,$3B,$38,$37
-	db $30,$29,$1E,$31,$2E,$42,$00,$3C,$2E,$26,$2E,$36,$00,$35,$32,$34
-	db $2E,$00,$3D,$31,$2E,$42,$00,$2C,$2A,$37,$00,$3C,$2C,$38,$3B,$2E
-	db $00,$2F,$3B,$26,$38,$36,$00,$2A,$37,$42,$40,$31,$2E,$3B,$2E,$29
-	db $0C,$3E,$3D,$00,$3D,$31,$32,$3C,$00,$32,$3C,$00,$00,$00,$2F,$38
-	db $3B,$00,$3D,$31,$2E,$00,$3C,$38,$3E,$3D,$31,$00,$2A,$36,$2E,$3B
-	db $32,$2C,$2A,$37,$00,$2C,$31,$26,$2A,$36,$39,$32,$38,$37,$3C,$31
-	db $32,$39,$52,$3C,$38,$00,$0B,$1C,$11,$0F,$18,$1E,$13,$18,$0B,$00
-	db $00,$00,$36,$3E,$3C,$3D,$00,$2F,$32,$30,$31,$3D,$00,$2B,$2A,$2C
-	db $34,$29,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00
+	db "BRAZIL are strong.They se-"
+	db "em like they can score fr-"
+	db "om anywhere.But this is   "
+	db "for the south american ch-"
+	db "ampionship,so ARGENTINA   "
+	db "must fight back.          "
 
 DATA_87F745:
-	db $12,$19,$16,$16,$0B,$18,$0E,$50,$1D,$00,$2D,$2E,$2F,$2E,$37,$3C
-	db $2E,$00,$31,$2A,$3C,$00,$00,$00,$00,$00,$2B,$2E,$2E,$37,$00,$3C
-	db $31,$2A,$3D,$3D,$2E,$3B,$2E,$2D,$00,$32,$37,$00,$3D,$31,$2E,$00
-	db $3C,$2E,$2C,$26,$38,$37,$2D,$00,$31,$2A,$35,$2F,$29,$1F,$37,$35
-	db $2E,$3C,$3C,$00,$3D,$31,$2E,$32,$3B,$00,$38,$2F,$2F,$26,$2E,$37
-	db $2C,$2E,$00,$3C,$3D,$2A,$3B,$3D,$3C,$00,$3C,$38,$36,$2E,$3D,$31
-	db $32,$37,$30,$52,$3D,$31,$2E,$42,$31,$2A,$3F,$2E,$00,$37,$38,$00
-	db $2C,$31,$38,$32,$2C,$2E,$00,$2B,$3E,$3D,$00,$3D,$38,$00,$00,$00
-	db $00,$00,$35,$38,$3C,$2E,$29,$00,$00,$00,$00,$00,$00,$00,$00,$00
-	db $00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00
+	db "HOLLAND'S defense has     "
+	db "been shattered in the sec-"
+	db "ond half.Unless their off-"
+	db "ence starts something,they"
+	db "have no choice but to     "
+	db "lose.                     "
 
 DATA_87F7E1:
-	db $1F,$37,$2B,$2E,$35,$32,$2E,$3F,$2A,$2B,$35,$42,$52,$0F,$18,$11
-	db $16,$0B,$18,$0E,$00,$2C,$38,$37,$2C,$26,$2E,$2D,$2E,$2D,$00,$2A
-	db $00,$30,$38,$2A,$35,$00,$3D,$38,$00,$2A,$00,$2C,$38,$3E,$37,$3D
-	db $3B,$42,$00,$00,$2F,$3B,$38,$36,$00,$0B,$1D,$13,$0B,$29,$13,$3D
-	db $00,$40,$32,$35,$35,$00,$2B,$2E,$00,$33,$3E,$3C,$3D,$00,$2A,$3C
-	db $00,$2B,$2A,$2D,$00,$2A,$3C,$00,$35,$38,$3C,$32,$37,$30,$00,$32
-	db $2F,$00,$3D,$31,$2E,$00,$00,$00,$30,$2A,$36,$2E,$00,$2E,$37,$2D
-	db $3C,$00,$32,$37,$00,$2A,$00,$3D,$32,$2E,$29,$00,$00,$00,$00,$00
-	db $00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00
-	db $00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00
+	db "Unbelievably,ENGLAND conc-"
+	db "eded a goal to a country  "
+	db "from ASIA.It will be just "
+	db "as bad as losing if the   "
+	db "game ends in a tie.       "
+	db "                          "
+
+cleartable
+table "tables/fonts/TallMenuText.txt"
 
 UNK_87F87D:
-	dw $60FE,$61FE,$62FE,$63FE,$64FE,$65FE,$66FE,$67FE
-	dw $68FE,$45FE,$F89D,$F8A3,$F8A9,$F8AF,$F8B9,$F8C3
+	db $FE,$60,$FE,$61,$FE,$62,$FE,$63,$FE,$64,$FE,$65,$FE,$66,$FE,$67
+	db $FE,$68,$FE,$45,$9D,$F8,$A3,$F8,$A9,$F8,$AF,$F8,$B9,$F8,$C3,$F8
 
 DATA_87F89D:
 	db $FD,$20,$86,$88,$87,$89
@@ -105812,46 +106083,42 @@ DATA_87F8D8:
 	dw DATA_87F8DC,DATA_87F900
 
 DATA_87F8DC:
-	db $7C,$75,$73,$7C,$6A,$72,$80,$00,$7B,$6F,$70,$7A,$00,$7B,$70,$74
-	db $6C,$54,$00,$00,$00,$00,$7B,$79,$80,$00,$68,$6E,$68,$70,$75,$54
-	db $00,$00,$00,$00
+	db "UNLUCKY THIS TIME."
+	db "    TRY AGAIN.    "
 
 DATA_87F900:
-	db $FD,$28,$00,$6A,$76,$75,$6E,$79,$68,$7B,$7C,$73,$68,$7B,$70,$76
-	db $75,$7A,$52,$00,$FD,$20,$00,$7A,$6A,$6C,$75,$68,$79,$70,$76,$00
-	db $00,$00,$6A,$73,$6C,$68,$79,$52
+	db $FD : db $28
+	db " CONGRATULATIONS! "
+	db $FD : db $20
+	db " SCENARIO   CLEAR!"
 
 DATA_87F928:
-	db $7A,$6A,$6C,$75,$68,$79,$70,$76,$00,$00,$00,$00,$00,$00,$00,$00
+	db "SCENARIO        "
 
 DATA_87F938:
-	db $70,$75
+	db "IN"
 
 DATA_87F93A:
-	db $7B,$79,$80,$52
+	db "TRY!"
 
 DATA_87F93E:
-	db $6A,$73,$6C,$68,$79,$6C,$6B
+	db "CLEARED"
 
 DATA_87F945:
-	db $7A,$6A,$6C,$75,$68,$79,$70,$76,$00,$74,$76,$6B,$6C,$00,$6A,$73
-	db $6C,$68,$79,$6C,$6B
+	db "SCENARIO MODE CLEARED"
 
 DATA_87F95A:
-	db $70,$75,$00,$00,$00,$7B,$6F,$00,$7B,$79,$80,$52
+	db "IN   TH TRY!"
 
 DATA_87F966:
-	db $00,$00,$6A,$76,$75,$6E,$79,$68,$7B,$7C,$73,$68,$7B,$70,$76,$75
-	db $7A,$52,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00
-	db $00,$00,$00,$00,$00,$00,$00,$00,$00,$00
+	db "  CONGRATULATIONS!                        "
 
 DATA_87F990:
-	db $80,$90,$96,$00,$82,$93,$86,$00,$95,$89,$86,$00,$88,$93,$86,$82
-	db $95,$86,$94,$95,$52,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00
-	db $00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$72,$76,$75,$68,$74,$70
-	db $00,$68,$73,$73,$00,$79,$70,$6E,$6F,$7B,$7A,$00,$79,$6C,$7A,$6C
-	db $79,$7D,$6C,$6B,$54,$FE,$86,$FE,$B6,$92,$94,$96,$98,$93,$95,$97
-	db $99,$9A,$9C,$9E,$A0,$9B,$9D,$9F,$A1
+	db "You are the greatest!                     KONAMI ALL RIGHTS RESERVED."
+
+UNK_87F9D5:
+	db $FE,$86,$FE,$B6,$92,$94,$96,$98,$93,$95,$97,$99,$9A,$9C,$9E,$A0
+	db $9B,$9D,$9F,$A1
 
 DATA_87F9E9:
 	db $FD,$28,$00,$00,$00,$00,$72,$73,$74,$74,$75,$00,$7E,$7F,$80,$76
@@ -105883,6 +106150,7 @@ DATA_87FA1B:
 	db $7A,$3D,$7A,$3D,$9C,$7A,$3D,$7A,$3D,$7A,$3D,$7A,$3D,$7A,$3D,$7A
 	db $3D,$7A,$3D,$7A,$3D,$7A,$3D,$7A,$3D,$7A,$3D,$7A,$3D
 
+cleartable
 	%FREE_BYTES($87FAC8, 1336, $FF)
 %BANK_END(<EndBank>)
 endmacro
